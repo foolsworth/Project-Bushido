@@ -1,0 +1,141 @@
+fileFormatVersion: 2
+guid: cb4047285615aca4b9fc8dffb7384c33
+timeCreated: 1506884603
+licenseType: Free
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Armour_Plate_R_011
+    100002: Armour_Plate_R_012
+    100004: Armour_Plate_R_013
+    100006: Armour_Plate_R_014
+    100008: Armour_String_R_006
+    100010: Armour_String_R_007
+    100012: Armour_String_R_008
+    100014: Armour_String_R_009
+    100016: Armour_String_R_010
+    100018: Hand_Right_Garbage_Closed
+    100020: Hand_Right_Garbage_Closed_MeshPart0
+    100022: Hand_Right_Garbage_Closed_MeshPart1
+    100024: //RootNode
+    400000: Armour_Plate_R_011
+    400002: Armour_Plate_R_012
+    400004: Armour_Plate_R_013
+    400006: Armour_Plate_R_014
+    400008: Armour_String_R_006
+    400010: Armour_String_R_007
+    400012: Armour_String_R_008
+    400014: Armour_String_R_009
+    400016: Armour_String_R_010
+    400018: Hand_Right_Garbage_Closed
+    400020: Hand_Right_Garbage_Closed_MeshPart0
+    400022: Hand_Right_Garbage_Closed_MeshPart1
+    400024: //RootNode
+    2300000: Armour_Plate_R_011
+    2300002: Armour_Plate_R_012
+    2300004: Armour_Plate_R_013
+    2300006: Armour_Plate_R_014
+    2300008: Armour_String_R_006
+    2300010: Armour_String_R_007
+    2300012: Armour_String_R_008
+    2300014: Armour_String_R_009
+    2300016: Armour_String_R_010
+    2300018: Hand_Right_Garbage_Closed_MeshPart0
+    2300020: Hand_Right_Garbage_Closed_MeshPart1
+    3300000: Armour_Plate_R_011
+    3300002: Armour_Plate_R_012
+    3300004: Armour_Plate_R_013
+    3300006: Armour_Plate_R_014
+    3300008: Armour_String_R_006
+    3300010: Armour_String_R_007
+    3300012: Armour_String_R_008
+    3300014: Armour_String_R_009
+    3300016: Armour_String_R_010
+    3300018: Hand_Right_Garbage_Closed_MeshPart0
+    3300020: Hand_Right_Garbage_Closed_MeshPart1
+    4300000: Armour_Plate_R_011
+    4300002: Armour_Plate_R_012
+    4300004: Armour_Plate_R_013
+    4300006: Armour_Plate_R_014
+    4300008: Armour_String_R_006
+    4300010: Armour_String_R_007
+    4300012: Armour_String_R_008
+    4300014: Armour_String_R_009
+    4300016: Armour_String_R_010
+    4300018: Hand_Right_Garbage_Closed_MeshPart0
+    4300020: Hand_Right_Garbage_Closed_MeshPart1
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

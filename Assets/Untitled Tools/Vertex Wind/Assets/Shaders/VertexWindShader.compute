@@ -1,0 +1,20 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel CSMain
+
+float TimeOffset;
+float Bending;
+float Scale;
+float YFactor;
+float PercentX;
+float PercentZ;
+RWStructuredBuffer<float3> VertexPositions;
+
+//Computes all of the new vertex positions on the GPU
+[numthreads(8,8,1)]
+void CSMain (uint3 id : SV_DispatchThreadID) {
+	float3 Pos = VertexPositions[id.x];
+	Pos.x = Pos.x + (sin(TimeOffset * (Pos.y / Scale)) / Bending) * PercentX;
+	Pos.z = Pos.z + (sin(TimeOffset * (Pos.y / Scale)) / Bending) * PercentZ;
+	Pos.y = Pos.y + (sin(TimeOffset * (Pos.y / Scale)) / Bending) * YFactor;
+	VertexPositions[id.x] = Pos;
+}
