@@ -42,7 +42,22 @@ ModelImporter:
     4300010: Low Branch Roots2
     7400000: Take 001
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #28'
+    second: {fileID: 2100000, guid: dd951dad7374a19498dee241e2bc00c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #47'
+    second: {fileID: 2100000, guid: f8b0c01f8b55cd1409f38b7cebc2319a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: 'Material #48'
+    second: {fileID: 2100000, guid: 7d7a71bc00a5f844297a0e843cd59d99, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
