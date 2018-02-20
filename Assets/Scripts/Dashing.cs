@@ -12,7 +12,7 @@ public class Dashing : MonoBehaviour {
 
     private SteamVR_TrackedObject trackedObj;
 
-    public GameObject physicalBody = GameObject.FindGameObjectWithTag("local");
+     GameObject physicalBody;
 
     Transform physicalBodyTransform;
 
@@ -41,12 +41,6 @@ public class Dashing : MonoBehaviour {
 
     void Start()
     {
-
-        physicalBodyTransform = physicalBody.transform;
-
-        PhysicalBodyRB = physicalBody.GetComponent<Rigidbody>();
-
-        elapsedTime = dashCD;
 
     }
 
