@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class lerpGhostHands : MonoBehaviour {
 
-    public Transform hand;
+    Transform hand;
     public int updateSpeed = 1;
 	// Use this for initialization
 	void Start () {
-		
-	}
+        hand = GameObject.FindGameObjectWithTag("local").transform.Find("Controller (" +gameObject.transform.name + ")");
+    }
 	
 	// Update is called once per frame
 	void Update () {

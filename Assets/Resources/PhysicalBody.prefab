@@ -230,7 +230,7 @@ GameObject:
   - component: {fileID: 114914319695110072}
   - component: {fileID: 114527831997076964}
   m_Layer: 9
-  m_Name: Left
+  m_Name: left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -268,7 +268,7 @@ GameObject:
   - component: {fileID: 114470482700020204}
   - component: {fileID: 114519868503269624}
   m_Layer: 9
-  m_Name: Right
+  m_Name: right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -531,7 +531,7 @@ GameObject:
   - component: {fileID: 4816344742394622}
   - component: {fileID: 114007877571836402}
   m_Layer: 0
-  m_Name: Body
+  m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -788,7 +788,7 @@ GameObject:
   - component: {fileID: 114788539884009500}
   - component: {fileID: 54725879028550234}
   m_Layer: 0
-  m_Name: Head
+  m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3716,7 +3716,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eff027c597e7d4748af3caeacbee9e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hand: {fileID: 4107796509403340, guid: e3df9c43b654211439950b9f1f434d34, type: 2}
   updateSpeed: 20
 --- !u!114 &114177188099648120
 MonoBehaviour:
@@ -3767,7 +3766,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1685651962551714}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5acbe94130a2fb24ca51a75dcc5fb501, type: 3}
   m_Name: 
@@ -3795,7 +3794,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eff027c597e7d4748af3caeacbee9e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hand: {fileID: 4187957255139740, guid: e3df9c43b654211439950b9f1f434d34, type: 2}
   updateSpeed: 20
 --- !u!114 &114585420717320412
 MonoBehaviour:
@@ -3921,7 +3919,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eff027c597e7d4748af3caeacbee9e94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hand: {fileID: 4588022503219300, guid: e3df9c43b654211439950b9f1f434d34, type: 2}
   updateSpeed: 20
 --- !u!114 &114914319695110072
 MonoBehaviour:

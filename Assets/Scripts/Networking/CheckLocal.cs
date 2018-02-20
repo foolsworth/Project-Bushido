@@ -20,5 +20,12 @@ public class CheckLocal : Photon.MonoBehaviour {
             gameObject.transform.Find("Body").GetComponent<lerpBody>().enabled = false;
 
         }
+
+        if (photonView.isMine == true && PhotonNetwork.connected == true)
+        {
+            gameObject.tag = "local";
+        }
+
+
     }
 }
