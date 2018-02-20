@@ -39,18 +39,18 @@ public class flowerEffect3 : MonoBehaviour
             if (angle >= max)
             {
                 random = Random.Range(1, 10);
-                Debug.Log("nega");
+                //Debug.Log("nega");
                 reversal = -1;
             }
 
             if (angle < min)
             {
-                Debug.Log("posa");
+                //Debug.Log("posa");
                 random = Random.Range(1, 10);
                 reversal = +1;
             }
-            Debug.Log(reversal);
-            Debug.Log(angle);
+            //Debug.Log(reversal);
+            //Debug.Log(angle);
             //counter++;
             //if(counter%100 == 0)
             //{
