@@ -11,21 +11,21 @@ public class CheckLocal : Photon.MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (photonView.isMine == false && PhotonNetwork.connected == true)
-        {
-            gameObject.transform.Find("Head").GetComponent<lerpGhostHands>().enabled = false;
-            gameObject.transform.Find("Left").GetComponent<lerpGhostHands>().enabled = false;
-            gameObject.transform.Find("Right").GetComponent<lerpGhostHands>().enabled = false;
-            gameObject.transform.Find("Right").GetComponent<grabsword>().enabled = false;
-            gameObject.transform.Find("Body").GetComponent<lerpBody>().enabled = false;
+        //if (photonView.isMine == false && PhotonNetwork.connected == true)
+        //{
+        //    gameObject.transform.Find("Head").GetComponent<lerpGhostHands>().enabled = false;
+        //    gameObject.transform.Find("Left").GetComponent<lerpGhostHands>().enabled = false;
+        //    gameObject.transform.Find("Right").GetComponent<lerpGhostHands>().enabled = false;
+        //    gameObject.transform.Find("Right").GetComponent<grabsword>().enabled = false;
+        //    gameObject.transform.Find("Body").GetComponent<lerpBody>().enabled = false;
 
-        }
+        //}
 
-        if (photonView.isMine == true && PhotonNetwork.connected == true)
+        if (PhotonNetwork.player.IsLocal && PhotonNetwork.connected == true)
         {
             gameObject.tag = "local";
         }
 
-
+        
     }
 }
