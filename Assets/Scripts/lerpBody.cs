@@ -8,11 +8,12 @@ public class lerpBody : MonoBehaviour {
     public int updateSpeed = 20;
 	// Use this for initialization
 	void Start () {
-		
-	}
+        head =gameObject.transform.parent.Find("head").transform;
+    }
 	
 	// Update is called once per frame
 	void Update () {
+
         if (transform.localPosition != head.localPosition)
         {
             transform.localPosition =Vector3.Lerp(transform.localPosition, head.localPosition, Time.deltaTime*updateSpeed);
