@@ -16,7 +16,7 @@ public class lerpGhostHands : MonoBehaviour {
 	void Update () {
         if (!instantiated)
         {
-            if (GameObject.FindGameObjectWithTag("local") != null)
+            if (gameObject.transform.CompareTag("local"))
             {
                 
                 
