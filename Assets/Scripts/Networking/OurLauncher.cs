@@ -31,7 +31,10 @@ using UnityEngine.SceneManagement;
 
         }
 
-    
+        void Start()
+    {
+        Connect();
+    }
 
     
         public void Connect()
