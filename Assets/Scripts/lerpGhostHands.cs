@@ -16,7 +16,7 @@ public class lerpGhostHands : MonoBehaviour {
 	void Update () {
         if (!instantiated)
         {
-            if (gameObject.transform.CompareTag("local"))
+            if (gameObject.transform.parent.tag=="local")
             {
                 
                 
@@ -31,13 +31,16 @@ public class lerpGhostHands : MonoBehaviour {
                     instantiated = true;
             }
         }
-        if (transform.localPosition != hand.localPosition)
+        if (gameObject.transform.parent.tag == "local")
         {
-            transform.localPosition =Vector3.Lerp(transform.localPosition, hand.localPosition, Time.deltaTime*updateSpeed);
-        }
-        if (transform.localRotation != hand.localRotation)
-        {
-            transform.localRotation = Quaternion.Lerp(transform.localRotation, hand.localRotation, Time.deltaTime*updateSpeed);
+            if (transform.localPosition != hand.localPosition)
+            {
+                transform.localPosition = Vector3.Lerp(transform.localPosition, hand.localPosition, Time.deltaTime * updateSpeed);
+            }
+            if (transform.localRotation != hand.localRotation)
+            {
+                transform.localRotation = Quaternion.Lerp(transform.localRotation, hand.localRotation, Time.deltaTime * updateSpeed);
+            }
         }
     }
 }
