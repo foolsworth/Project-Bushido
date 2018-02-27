@@ -14,9 +14,21 @@ public class GameManager : Photon.PunBehaviour
     [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
     public static GameObject LocalPlayerInstance;
 
+    static public GameManager Instance;
+
 
     private void Start()
     {
+
+        Instance = this;
+
+        if (!PhotonNetwork.connected)
+        {
+            SceneManager.LoadScene("Game");
+
+            return;
+        }
+
         if (GameManager.LocalPlayerInstance == null)
         {
             Debug.Log("We are Instantiating LocalPlayer from " + SceneManager.GetActiveScene().name);
@@ -31,7 +43,7 @@ public class GameManager : Photon.PunBehaviour
 
     private void Awake()
     {
-        // #Important
+        /* // #Important
         // used in GameManager.cs: we keep track of the localPlayer instance to prevent instantiation when levels are synchronized
         if (PhotonNetwork.player.IsLocal)
         {
@@ -39,7 +51,8 @@ public class GameManager : Photon.PunBehaviour
         }
         // #Critical
         // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
-        DontDestroyOnLoad(this.gameObject);
+        DontDestroyOnLoad(this.gameObject);*/
+
     }
 
     void LoadScene()
