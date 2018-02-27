@@ -14,8 +14,7 @@ public class lerpGhostHands : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (!instantiated)
-        {
+
             if (gameObject.transform.parent.tag=="local")
             {
                 
@@ -28,9 +27,9 @@ public class lerpGhostHands : MonoBehaviour {
                 {
                     hand = GameObject.Find("GhostBody").transform.Find("Controller (" + gameObject.transform.name + ")");
                 }
-                    instantiated = true;
+                   
             }
-        }
+        
         if (gameObject.transform.parent.tag == "local")
         {
             if (transform.localPosition != hand.localPosition)
