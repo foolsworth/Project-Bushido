@@ -21,10 +21,10 @@ public class CheckLocal : Photon.MonoBehaviour {
 
         //}
 
-        if (PhotonNetwork.player.IsLocal && PhotonNetwork.connected == true)
+        /*if (PhotonNetwork.player.IsLocal && PhotonNetwork.connected == true)
         {
             gameObject.tag = "local";
-        }
+        }*/
 
         
     }

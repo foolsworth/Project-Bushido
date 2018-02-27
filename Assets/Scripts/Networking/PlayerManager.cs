@@ -20,6 +20,7 @@ public class PlayerManager : Photon.PunBehaviour
         if (photonView.isMine)
         {
             LocalPlayerInstance = gameObject;
+            LocalPlayerInstance.tag = "local";
         }
 
         // #Critical
