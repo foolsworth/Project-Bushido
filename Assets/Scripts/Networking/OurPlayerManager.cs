@@ -57,6 +57,7 @@ using UnityEngine.EventSystems;
 
             GameObject.Find("GhostBody").transform.position = spawnPos1.transform.position;
             GameObject.Find("GhostBody").transform.rotation = spawnPos1.transform.rotation;
+            player1Connected = true;
         }
 
         else
