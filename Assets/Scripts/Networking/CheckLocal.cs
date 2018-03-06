@@ -23,7 +23,6 @@ public class CheckLocal : Photon.MonoBehaviour
             gameObject.transform.Find("left").GetComponent<lerpGhostHands>().enabled = false;
             gameObject.transform.Find("right").GetComponent<lerpGhostHands>().enabled = false;
             gameObject.transform.Find("right").GetComponent<grabsword>().enabled = false;
-            gameObject.transform.Find("body").GetComponent<lerpBody>().enabled = false;
             return;
         }
 
