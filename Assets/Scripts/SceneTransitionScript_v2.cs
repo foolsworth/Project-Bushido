@@ -26,18 +26,18 @@ public class SceneTransitionScript_v2 : MonoBehaviour {
         m_destinationOffset = new Vector3(0.0f, 0.0f, (-0.75f * m_tunnel.transform.localScale.y));
         m_destination = new Vector3(m_yourFace.transform.position.x, m_yourFace.transform.position.y, m_yourFace.transform.position.z);
         m_destination += m_destinationOffset;
-        Debug.Log("Dstination is: " + m_destination);
+        //Debug.Log("Dstination is: " + m_destination);
 	}
 	
 	// Update is called once per frame
 	void Update () {
         //Debug.Log("Isn't it changing? \t " + m_source); //I want this not to be changing.
-        Debug.Log("Is it changing? \t " + m_destination);  //I want this to be changing.
+        //Debug.Log("Is it changing? \t " + m_destination);  //I want this to be changing.
     }
 
     private void FixedUpdate() {
         m_accumulatedTime += Time.fixedDeltaTime;
-        //m_destination = m_yourFace.transform.position; //If I'm wrong about this being a pointer, I don't need this line.
+        m_destination = m_yourFace.transform.position + m_destinationOffset; //If I'm wrong about this being a pointer, I don't need this line.
 
         //if(m_accumulatedTime <= m_waitTime + m_duration) { //Disable movement if the action is finished.
         m_tunnel.transform.position = LerpPosition(m_source, m_destination, (m_accumulatedTime - m_waitTime) / m_duration);
