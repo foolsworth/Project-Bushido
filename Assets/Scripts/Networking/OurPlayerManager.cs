@@ -12,8 +12,8 @@ using UnityEngine.EventSystems;
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
 
-    GameObject spawnPos1 = GameObject.Find("spawnPos1");
-    GameObject spawnPos2 = GameObject.Find("spawnPos2");
+    GameObject spawnPos1;
+    GameObject spawnPos2;
 
     
 
@@ -50,6 +50,8 @@ using UnityEngine.EventSystems;
         public void Start()
         {
 
+        spawnPos1 = GameObject.Find("spawnPos1");
+        spawnPos2 = GameObject.Find("spawnPos2");
 
         if (!player1Connected) {
 
