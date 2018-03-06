@@ -12,9 +12,9 @@ public class Dashing : MonoBehaviour {
 
     private SteamVR_TrackedObject trackedObj;
 
-    public GameObject physicalBody;
+     GameObject physicalBody;
 
-    public Transform physicalBodyTransform;
+    Transform physicalBodyTransform;
 
     public float distance;
 
@@ -31,6 +31,8 @@ public class Dashing : MonoBehaviour {
     private float elapsedTime;
     private bool count = true;
 
+    bool instantiated = false;
+
     private SteamVR_Controller.Device Controller
     {
         get { return SteamVR_Controller.Input((int)trackedObj.index); }
@@ -39,13 +41,7 @@ public class Dashing : MonoBehaviour {
 
     void Start()
     {
-
-        physicalBodyTransform = physicalBody.transform;
-
-        PhysicalBodyRB = physicalBody.GetComponent<Rigidbody>();
-
-        elapsedTime = dashCD;
-
+        
     }
 
     void Awake()
@@ -57,7 +53,23 @@ public class Dashing : MonoBehaviour {
     // Update is called once per frame
     void Update () {
        
+        if (!instantiated)
+        {
+            if (GameObject.FindGameObjectWithTag("local") != null)
+            {
+                physicalBody = GameObject.FindGameObjectWithTag("local");
 
+                physicalBodyTransform = physicalBody.transform;
+
+                PhysicalBodyRB = physicalBody.GetComponent<Rigidbody>();
+
+                
+                physicalBody.transform.position = GhostTransform.position;
+                physicalBody.transform.rotation = GhostTransform.rotation;
+
+                instantiated = true;
+            }
+        }
         if (Controller.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad) )
         {
             count = false;
@@ -71,14 +83,14 @@ public class Dashing : MonoBehaviour {
             }
             
         }
-        else if (Controller.GetPressUp(SteamVR_Controller.ButtonMask.Touchpad))
+        else if (Controller.GetPressUp(SteamVR_Controller.ButtonMask.Touchpad) && instantiated)
         {
             count = true;
             dashing = false;
             GhostTransform.position = physicalBodyTransform.position;
         }
         
-        if (dashing)
+        if (dashing && instantiated)
         {
             Debug.Log("Dats Dash YO!");
             PhysicalBodyRB.position = Vector3.Lerp(PhysicalBodyRB.position, targetPosition, Time.deltaTime * dashSpeed);
