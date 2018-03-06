@@ -12,10 +12,10 @@ using UnityEngine.EventSystems;
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
 
-    public GameObject spawnPos1;
-    public GameObject spawnPos2;
+    GameObject spawnPos1 = GameObject.Find("spawnPos1");
+    GameObject spawnPos2 = GameObject.Find("spawnPos2");
 
-
+    
 
     bool player1Connected = false;
     
@@ -49,10 +49,21 @@ using UnityEngine.EventSystems;
         /// </summary>
         public void Start()
         {
-            
 
-         if (!player1Connected)
 
+        if (!player1Connected) {
+
+            GameObject.Find("GhostBody").transform.position = spawnPos1.transform.position;
+            GameObject.Find("GhostBody").transform.rotation = spawnPos1.transform.rotation;
+        }
+
+        else
+        {
+            GameObject.Find("GhostBody").transform.position = spawnPos2.transform.position;
+            GameObject.Find("GhostBody").transform.rotation = spawnPos2.transform.rotation;
+        }
+
+           
       
 
 #if UNITY_5_4_OR_NEWER

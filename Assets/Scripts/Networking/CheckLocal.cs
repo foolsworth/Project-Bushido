@@ -19,11 +19,11 @@ public class CheckLocal : Photon.MonoBehaviour
     {
         if (!photonView.isMine)
         {
-            gameObject.transform.Find("Head").GetComponent<lerpGhostHands>().enabled = false;
-            gameObject.transform.Find("Left").GetComponent<lerpGhostHands>().enabled = false;
-            gameObject.transform.Find("Right").GetComponent<lerpGhostHands>().enabled = false;
-            gameObject.transform.Find("Right").GetComponent<grabsword>().enabled = false;
-            gameObject.transform.Find("Body").GetComponent<lerpBody>().enabled = false;
+            gameObject.transform.Find("head").GetComponent<lerpGhostHands>().enabled = false;
+            gameObject.transform.Find("left").GetComponent<lerpGhostHands>().enabled = false;
+            gameObject.transform.Find("right").GetComponent<lerpGhostHands>().enabled = false;
+            gameObject.transform.Find("right").GetComponent<grabsword>().enabled = false;
+            gameObject.transform.Find("body").GetComponent<lerpBody>().enabled = false;
             return;
         }
 
