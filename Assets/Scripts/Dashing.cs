@@ -41,7 +41,7 @@ public class Dashing : MonoBehaviour {
 
     void Start()
     {
-
+        
     }
 
     void Awake()
@@ -62,6 +62,10 @@ public class Dashing : MonoBehaviour {
                 physicalBodyTransform = physicalBody.transform;
 
                 PhysicalBodyRB = physicalBody.GetComponent<Rigidbody>();
+
+                
+                physicalBody.transform.position = GhostTransform.position;
+                physicalBody.transform.rotation = GhostTransform.rotation;
 
                 instantiated = true;
             }

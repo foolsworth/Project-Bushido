@@ -12,15 +12,23 @@ using UnityEngine.EventSystems;
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
 
-        #endregion
+    public GameObject spawnPos1;
+    public GameObject spawnPos2;
 
-     
-        #region MonoBehaviour CallBacks
 
-        /// <summary>
-        /// MonoBehaviour method called on GameObject by Unity during early initialization phase.
-        /// </summary>
-        public void Awake()
+
+    bool player1Connected = false;
+    
+
+    #endregion
+
+
+    #region MonoBehaviour CallBacks
+
+    /// <summary>
+    /// MonoBehaviour method called on GameObject by Unity during early initialization phase.
+    /// </summary>
+    public void Awake()
         {
         
          
@@ -43,7 +51,7 @@ using UnityEngine.EventSystems;
         {
             
 
-          
+         if (!player1Connected)
 
       
 
@@ -194,12 +202,12 @@ using UnityEngine.EventSystems;
         {
             if (stream.isWriting)
             {
-                // We own this player: send the others our data
-                
+            // We own this player: send the others our data
+            stream.SendNext(player1Connected);
             }
             else
             {
-              
+            this.player1Connected = (bool)stream.ReceiveNext();
             }
         }
 
