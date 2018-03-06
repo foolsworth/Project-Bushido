@@ -8,6 +8,8 @@ TagManager:
   - projectile
   - Sword
   - local
+  - dangerNet
+  - localArmorChild
   layers:
   - Default
   - TransparentFX

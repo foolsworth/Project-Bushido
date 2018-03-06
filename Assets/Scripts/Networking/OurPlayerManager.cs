@@ -1,5 +1,6 @@
 ﻿
 
+using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -18,7 +19,7 @@ using UnityEngine.EventSystems;
     
 
     bool player1Connected = false;
-    
+    public static bool dead = false;
 
     #endregion
 
@@ -226,4 +227,7 @@ using UnityEngine.EventSystems;
         }
 
         #endregion
+
+
+   
     }
