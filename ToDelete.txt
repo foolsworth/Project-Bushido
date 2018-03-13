@@ -1,0 +1,7 @@
+Kevin suggests these items to be deleted:
+
+Assets > Prefabs > SceneTransitionProp.prefab
+Assets > Scripts > SceneTransitionScript.cs
+Assets > Scripts > SceneTransitionScript_v2.cs
+
+Following the above deletions, Kevin proposes the renaming of SceneTransitionScript_v3.cs to SceneTransitionScript.cs, he can handle that later though.
