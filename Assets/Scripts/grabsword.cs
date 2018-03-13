@@ -21,9 +21,10 @@ public class grabsword : MonoBehaviour {
             {
                 closedGHand.SetActive(true);
                 openGHand.SetActive(false);
+                unsheath.Play();
             }
             
-            unsheath.Play();
+            
             collision.gameObject.transform.parent = gameObject.transform;
             collision.gameObject.GetComponent<Collider>().enabled = false;
             collision.gameObject.transform.position = targetTransform.position;
@@ -40,6 +41,7 @@ public class grabsword : MonoBehaviour {
         closedGHand = GhostHan.transform.Find("Tsujigiri_FirstHero_HandGuantlet_RIGHT_Closed (1)").gameObject;
 
         openGHand = GhostHan.transform.Find("Tsujigiri_FirstHero_HandGauntlet_RIGHT").gameObject;
+        unsheath = GhostHan.GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
