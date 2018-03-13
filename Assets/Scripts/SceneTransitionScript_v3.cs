@@ -20,7 +20,7 @@ public class SceneTransitionScript_v3 : MonoBehaviour {
 	void Start () {
         m_accumulatedTime = 0.0f;
         m_tunnelParent = gameObject;
-        m_tunnelParent.transform.position = m_player.transform.forward * 150.0f;
+        m_tunnelParent.transform.position = Vector3.Normalize(Vector3.ProjectOnPlane(m_player.transform.forward, Vector3.up)) * 150.0f;
 
         m_source = m_tunnelParent.transform.position; //Desired is a copy of present values.
         m_destination = m_player.transform.position;
