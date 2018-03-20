@@ -1030,7 +1030,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1685651962551714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.74423, y: 0.69331676, z: -10.586277}
+  m_LocalPosition: {x: -0.2781479, y: 0.87623733, z: 2.1790383}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4671587714646584}
@@ -3620,8 +3620,8 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1222289049440246}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
+  m_IsTrigger: 0
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.071874075, y: 0.041553944, z: 0.10180496}
   m_Center: {x: 0.0029234719, y: -0.0021373879, z: -0.060997806}
@@ -3645,10 +3645,10 @@ BoxCollider:
   m_GameObject: {fileID: 1894650026776812}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.071874075, y: 0.041553944, z: 0.10180496}
-  m_Center: {x: 0.0029234719, y: -0.0021373879, z: -0.060997806}
+  m_Size: {x: 0.071874075, y: 0.041553944, z: 0.23215927}
+  m_Center: {x: 0.0029234493, y: -0.0021373879, z: 0.004179382}
 --- !u!82 &82634507831518074
 AudioSource:
   m_ObjectHideFlags: 1
@@ -3826,8 +3826,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114512920962553434}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 1
+  instantiationId: 1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114177188099648120
@@ -4020,8 +4020,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114193140661599750}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 3
+  instantiationId: 3
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114316386535061206
@@ -4233,8 +4233,8 @@ MonoBehaviour:
   - {fileID: 114712086998628358}
   - {fileID: 114558999319489220}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 4
+  instantiationId: 4
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114607730704255874
@@ -4370,8 +4370,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114234145511473172}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 0
-  instantiationId: -1
+  viewIdField: 2
+  instantiationId: 2
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!135 &135007926281601918
@@ -4480,8 +4480,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -2.1207352, y: 11.579132, z: -2.4578857}
-    m_Extent: {x: 2.5204957, y: 8.527863, z: 1.335806}
+    m_Center: {x: -2.1207318, y: 11.579136, z: -2.457878}
+    m_Extent: {x: 2.5204928, y: 8.527863, z: 1.3358119}
   m_DirtyAABB: 0
 --- !u!138 &138490335610934522
 FixedJoint:
