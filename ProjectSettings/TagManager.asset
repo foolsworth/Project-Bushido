@@ -10,6 +10,8 @@ TagManager:
   - local
   - dangerNet
   - localArmorChild
+  - Menu_Proceed
+  - Menu_Option0
   layers:
   - Default
   - TransparentFX
