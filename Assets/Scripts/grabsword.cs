@@ -30,6 +30,7 @@ public class grabsword : MonoBehaviour {
             collision.gameObject.transform.position = targetTransform.position;
             collision.gameObject.transform.rotation = targetTransform.rotation;
             collision.gameObject.transform.localScale = targetTransform.localScale;
+            this.GetComponent<FixedJoint>().connectedBody = collision.gameObject.GetComponent<Rigidbody>();
         }
 
     }
