@@ -31,6 +31,7 @@ public class grabsword : MonoBehaviour {
             collision.gameObject.transform.rotation = targetTransform.rotation;
             collision.gameObject.transform.localScale = targetTransform.localScale;
             this.GetComponent<FixedJoint>().connectedBody = collision.gameObject.GetComponent<Rigidbody>();
+            collision.gameObject.GetComponent<MeshCollider>().enabled = true;
             collision.gameObject.GetComponent<Rigidbody>().isKinematic = false;
             collision.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         }
