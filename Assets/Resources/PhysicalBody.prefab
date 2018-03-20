@@ -239,7 +239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1202542547170958
 GameObject:
   m_ObjectHideFlags: 0
@@ -776,6 +776,7 @@ GameObject:
   - component: {fileID: 23602375920515922}
   - component: {fileID: 95490532721973320}
   - component: {fileID: 65626443775451276}
+  - component: {fileID: 64589120600564746}
   m_Layer: 0
   m_Name: Tsujigiri_Blade_Textured
   m_TagString: Sword
@@ -1005,7 +1006,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1982678835509692
 GameObject:
   m_ObjectHideFlags: 1
@@ -1030,7 +1031,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1685651962551714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2781479, y: 0.87623733, z: 2.1790383}
+  m_LocalPosition: {x: -0.9987962, y: 0.9957293, z: 0.971865}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4671587714646584}
@@ -3515,6 +3516,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &64589120600564746
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1650214716732984}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: -1
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: a293bf9cadd812b469f5504657538b3f, type: 3}
 --- !u!64 &64788234572854114
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -3608,7 +3623,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1650214716732984}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.5020606, y: 0.5099779, z: 2.303181}
