@@ -777,6 +777,7 @@ GameObject:
   - component: {fileID: 95490532721973320}
   - component: {fileID: 65626443775451276}
   - component: {fileID: 64589120600564746}
+  - component: {fileID: 54542316089856686}
   m_Layer: 0
   m_Name: Tsujigiri_Blade_Textured
   m_TagString: Sword
@@ -1031,7 +1032,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1685651962551714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9987962, y: 0.9957293, z: 0.971865}
+  m_LocalPosition: {x: -1.327038, y: 1.0310674, z: 0.85002404}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4671587714646584}
@@ -3441,6 +3442,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!54 &54542316089856686
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1650214716732984}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 2
+  m_Constraints: 126
+  m_CollisionDetection: 2
 --- !u!54 &54670812164963824
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -4495,8 +4511,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -2.1207318, y: 11.579136, z: -2.457878}
-    m_Extent: {x: 2.5204928, y: 8.527863, z: 1.3358119}
+    m_Center: {x: -2.1207314, y: 11.579132, z: -2.4578743}
+    m_Extent: {x: 2.5204926, y: 8.527863, z: 1.3358119}
   m_DirtyAABB: 0
 --- !u!138 &138490335610934522
 FixedJoint:
