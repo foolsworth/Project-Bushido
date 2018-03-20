@@ -82,13 +82,21 @@ public class Dashing : MonoBehaviour {
                 Debug.Log("(" + temp.x + ", " + temp.y + ")");
                 float angle = -Vector2.SignedAngle(Vector2.up, temp);
                 //"You can't put find()s in the update method." "I'm just testing right now."
-
+                //replace the 'physicalBodyTransform.Find("head").transform' with a 'theHead'
                 Vector3 relativedir = Quaternion.AngleAxis(angle, Vector3.up) * new Vector3(physicalBodyTransform.Find("head").transform.forward.normalized.x, 0, physicalBodyTransform.Find("head").transform.forward.normalized.z) * distance;
                 targetPosition = GhostTransform.position + relativedir;
 
+                //Kevin wishes to revisit the below
                 //Vector3 dashDir = new Vector3(Controller.GetAxis().x, 0.0f, Controller.GetAxis().y);
+                //Debug.Log(dashDir);
                 //Vector3 myForward = Vector3.ProjectOnPlane(theHead.forward, Vector3.up);
-                //float kAngle = Vector3.SignedAngle()
+                //Debug.Log(myForward);
+                //float angle = Vector3.SignedAngle(myForward, dashDir, Vector3.up);
+                //Quaternion rotation = Quaternion.Euler(0.0f, angle, 0.0f);
+                //Vector3 temp = targetPosition;
+                //targetPosition = GhostTransform.position + rotation * dashDir.normalized * distance;
+                //Debug.Log("delta is: " + (targetPosition - temp));
+                //Debug.Log("==========");
             }
             else
             {
@@ -116,7 +124,7 @@ public class Dashing : MonoBehaviour {
         if (count)
         {
             elapsedTime += Time.deltaTime;
-            Debug.Log(elapsedTime);
+            //Debug.Log(elapsedTime);
         }
         
         }
