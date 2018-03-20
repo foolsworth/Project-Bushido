@@ -33,6 +33,8 @@ public class Dashing : MonoBehaviour {
 
     bool instantiated = false;
 
+    private Transform theHead;
+
     private SteamVR_Controller.Device Controller
     {
         get { return SteamVR_Controller.Input((int)trackedObj.index); }
@@ -41,7 +43,7 @@ public class Dashing : MonoBehaviour {
 
     void Start()
     {
-        
+        theHead = physicalBodyTransform.Find("head").transform;
     }
 
     void Awake()
@@ -77,8 +79,18 @@ public class Dashing : MonoBehaviour {
                 elapsedTime = 0;
                 dashing = true;
                 Vector2 temp = new Vector2(Controller.GetAxis(Valve.VR.EVRButtonId.k_EButton_Axis0).x, Controller.GetAxis(Valve.VR.EVRButtonId.k_EButton_Axis0).y);
-                targetPosition = GhostTransform.position + new Vector3(temp.x, 0, temp.y) * distance;
-            }else
+                Debug.Log("(" + temp.x + ", " + temp.y + ")");
+                float angle = -Vector2.SignedAngle(Vector2.up, temp);
+                //"You can't put find()s in the update method." "I'm just testing right now."
+
+                Vector3 relativedir = Quaternion.AngleAxis(angle, Vector3.up) * new Vector3(physicalBodyTransform.Find("head").transform.forward.normalized.x, 0, physicalBodyTransform.Find("head").transform.forward.normalized.z) * distance;
+                targetPosition = GhostTransform.position + relativedir;
+
+                //Vector3 dashDir = new Vector3(Controller.GetAxis().x, 0.0f, Controller.GetAxis().y);
+                //Vector3 myForward = Vector3.ProjectOnPlane(theHead.forward, Vector3.up);
+                //float kAngle = Vector3.SignedAngle()
+            }
+            else
             {
                 noDashing.Play();
             }

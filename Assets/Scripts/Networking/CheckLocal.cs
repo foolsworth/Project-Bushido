@@ -12,6 +12,7 @@ public class CheckLocal : Photon.MonoBehaviour
         {
             gameObject.tag = "local";
         }
+        LookatCamera.targets.Add(transform);
     }
 
     // Update is called once per frame
