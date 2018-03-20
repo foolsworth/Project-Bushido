@@ -13,7 +13,7 @@ public class grabsword : MonoBehaviour {
     void OnTriggerEnter(Collider collision)
     {
         Debug.Log("sword collision");
-        if (collision.gameObject.layer == 9 && collision.gameObject.tag == "Sword")
+        if ( collision.gameObject.tag == "Sword")
         {
             closedHand.SetActive(true);
             openHand.SetActive(false);

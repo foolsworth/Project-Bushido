@@ -76,7 +76,8 @@ public class Dashing : MonoBehaviour {
             if(elapsedTime >= dashCD) {
                 elapsedTime = 0;
                 dashing = true;
-                targetPosition = GhostTransform.position + (new Vector3(transform.forward.x, 0, transform.forward.z)) * distance;
+                Vector2 temp = new Vector2(Controller.GetAxis(Valve.VR.EVRButtonId.k_EButton_Axis0).x, Controller.GetAxis(Valve.VR.EVRButtonId.k_EButton_Axis0).y);
+                targetPosition = GhostTransform.position + new Vector3(temp.x, 0, temp.y) * distance;
             }else
             {
                 noDashing.Play();
