@@ -96,6 +96,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1116520148822254
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4137115678099212}
+  - component: {fileID: 136789988382775536}
+  m_Layer: 10
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1128729830743180
 GameObject:
   m_ObjectHideFlags: 1
@@ -666,6 +682,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1554182619167778
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4437818423041930}
+  - component: {fileID: 136276831458350434}
+  m_Layer: 10
+  m_Name: GameObject (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1583175923634500
 GameObject:
   m_ObjectHideFlags: 1
@@ -776,7 +808,6 @@ GameObject:
   - component: {fileID: 23602375920515922}
   - component: {fileID: 95490532721973320}
   - component: {fileID: 65626443775451276}
-  - component: {fileID: 64651047917192956}
   m_Layer: 10
   m_Name: Tsujigiri_Blade_Textured
   m_TagString: Sword
@@ -1032,7 +1063,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1685651962551714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.163325, y: 0.963719, z: 0.9259088}
+  m_LocalPosition: {x: 0.10402755, y: 0.88888997, z: 1.114693}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4671587714646584}
@@ -1056,6 +1087,8 @@ Transform:
   m_LocalPosition: {x: 0.028075, y: -0.58697, z: 0.46006}
   m_LocalScale: {x: 0.07018864, y: 0.11969272, z: 0.11969262}
   m_Children:
+  - {fileID: 4137115678099212}
+  - {fileID: 4437818423041930}
   - {fileID: 4364098258039826}
   - {fileID: 4178297708991710}
   - {fileID: 4520403332009832}
@@ -1138,6 +1171,19 @@ Transform:
   m_Father: {fileID: 4083801773852062}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4137115678099212
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1116520148822254}
+  m_LocalRotation: {x: 0.748931, y: -0, z: -0.0000000037252903, w: 0.66264796}
+  m_LocalPosition: {x: 0.0000005480657, y: -0.0029056375, z: -0.0020631666}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4061217726510436}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 96.996, y: -0.000015258789, z: -0.000015258789}
 --- !u!4 &4152541462189564
 Transform:
   m_ObjectHideFlags: 1
@@ -1219,7 +1265,7 @@ Transform:
   - {fileID: 4232406340851354}
   - {fileID: 4631687740664652}
   m_Father: {fileID: 4061217726510436}
-  m_RootOrder: 1
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: -180, y: -0.000015258789, z: -100.892}
 --- !u!4 &4214293726165896
 Transform:
@@ -1356,7 +1402,7 @@ Transform:
   m_LocalScale: {x: 1.1971895, y: 1.1900958, z: 2.0058784}
   m_Children: []
   m_Father: {fileID: 4061217726510436}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4380680799187100
 Transform:
@@ -1420,6 +1466,19 @@ Transform:
   m_Father: {fileID: 4816344742394622}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4437818423041930
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1554182619167778}
+  m_LocalRotation: {x: 0.8282118, y: 0.000000014901159, z: -0, w: 0.5604153}
+  m_LocalPosition: {x: -0, y: 0.803, z: 0.265}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4061217726510436}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 111.83099, y: 0, z: 0}
 --- !u!4 &4493698894413718
 Transform:
   m_ObjectHideFlags: 1
@@ -1457,7 +1516,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4061217726510436}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0.5, y: -0.155, z: 0.282}
 --- !u!4 &4596728229414070
 Transform:
@@ -3517,20 +3576,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &64651047917192956
-MeshCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1650214716732984}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: -1
-  m_SkinWidth: 0.01
-  m_Mesh: {fileID: 4300000, guid: a293bf9cadd812b469f5504657538b3f, type: 3}
 --- !u!64 &64788234572854114
 MeshCollider:
   m_ObjectHideFlags: 1
@@ -4444,6 +4489,19 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: -0.54, z: 0}
+--- !u!136 &136276831458350434
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1554182619167778}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.23
+  m_Height: 3.69
+  m_Direction: 1
+  m_Center: {x: 0, y: 5.61, z: 0}
 --- !u!136 &136565498452252448
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -4457,6 +4515,19 @@ CapsuleCollider:
   m_Height: 1
   m_Direction: 1
   m_Center: {x: 0, y: -0.54, z: 0}
+--- !u!136 &136789988382775536
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1116520148822254}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.23
+  m_Height: 1.56
+  m_Direction: 1
+  m_Center: {x: 0, y: 3, z: 0}
 --- !u!136 &136996362448491284
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -4513,8 +4584,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -2.1207352, y: 11.579132, z: -2.457878}
-    m_Extent: {x: 2.5204957, y: 8.527863, z: 1.3358119}
+    m_Center: {x: -2.1207314, y: 11.579132, z: -2.4578762}
+    m_Extent: {x: 2.5204926, y: 8.527863, z: 1.3358134}
   m_DirtyAABB: 0
 --- !u!138 &138490335610934522
 FixedJoint:

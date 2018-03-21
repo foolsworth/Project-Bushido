@@ -26,7 +26,7 @@ public class grabsword : MonoBehaviour {
             
             
             collision.gameObject.GetComponent<Collider>().enabled = false;
-            collision.gameObject.GetComponent<MeshCollider>().enabled = true;
+            //collision.gameObject.GetComponent<MeshCollider>().enabled = true;
             collision.gameObject.transform.position = targetTransform.position;
             collision.gameObject.transform.rotation = targetTransform.rotation;
             collision.gameObject.transform.localScale = targetTransform.localScale;
