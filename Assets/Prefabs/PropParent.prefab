@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114183807794371392}
   - component: {fileID: 114673929412159870}
   m_Layer: 0
-  m_Name: TestAlternateSceneTransitionProp
+  m_Name: SceneTransitionProp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ GameObject:
   - component: {fileID: 135608529366592882}
   - component: {fileID: 23885465469144888}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,6 +216,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_player: {fileID: 0}
+  m_otherRotators:
+  - {fileID: 0}
   m_waitTime: 5
   m_animationDuration: 5
 --- !u!114 &114673929412159870
