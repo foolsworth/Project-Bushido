@@ -7,13 +7,23 @@ public class MainMenuNavigator : MonoBehaviour {
 
     public SceneTransitionScript_v3 m_transitionController;
 
+    private void Awake() {
+        Debug.Log("Menu awake ...");
+    }
+
     private void Start() {
-        
+        Debug.Log("Menu started...?");
+
         //set the variables to infinity
         //m_transitionController.m_waitTime = float.PositiveInfinity;
         //m_transitionController.m_animationDuration = float.PositiveInfinity;
         //pause the transition
+        if (!m_transitionController) {
+            m_transitionController = (SceneTransitionScript_v3)GameObject.Find("PropParent").GetComponent(typeof(SceneTransitionScript_v3));
+            Debug.Log(m_transitionController);
+        }
         m_transitionController.PauseTransition();
+            
     }
 
     private void OnTriggerEnter(Collider p_collider) {

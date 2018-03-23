@@ -18,8 +18,12 @@ public class SceneTransitionScript_v3 : MonoBehaviour {
     private Vector3 m_source;
     private Vector3 m_destination;
 
-	// Use this for initialization
-	void Start () {
+    private void Awake() {
+        Debug.Log("Transition awake ...");
+    }
+
+    void Start () {
+        Debug.Log("Transition started...?");
         m_doesAccumulate = true;
         m_accumulatedTime = 0.0f;
         m_tunnelParent = gameObject;
@@ -48,5 +52,6 @@ public class SceneTransitionScript_v3 : MonoBehaviour {
 
     public void PauseTransition(bool unpause = false) {
         m_doesAccumulate = !unpause;
+        Debug.Log("Transition has " + (unpause? "un" : "") + "paused.");
     }
 }
