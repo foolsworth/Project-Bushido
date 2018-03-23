@@ -124,6 +124,12 @@ public class Dashing : MonoBehaviour {
         {
             count = true;
             dashing = false;
+            RaycastHit hit3;
+            Ray downRay3 = new Ray(physicalBodyTransform.position+new Vector3(0,100,0), -Vector3.up);
+            if (Physics.Raycast(downRay3, out hit3))
+            {
+                physicalBodyTransform.position = new Vector3(physicalBodyTransform.position.x, hit3.transform.position.y + playerHeight / 2, physicalBodyTransform.position.z);
+            }
             GhostTransform.position = physicalBodyTransform.position;
         }
         
