@@ -28,6 +28,8 @@ public class Dashing : MonoBehaviour {
 
     public float dashCD;
 
+    private float playerHeight;
+
     private float elapsedTime;
     private bool count = true;
 
@@ -59,7 +61,9 @@ public class Dashing : MonoBehaviour {
         {
             if (GameObject.FindGameObjectWithTag("local") != null)
             {
-                physicalBody = GameObject.FindGameObjectWithTag("local");
+                
+
+                    physicalBody = GameObject.FindGameObjectWithTag("local");
 
                 physicalBodyTransform = physicalBody.transform;
 
@@ -83,8 +87,20 @@ public class Dashing : MonoBehaviour {
                 float angle = -Vector2.SignedAngle(Vector2.up, temp);
                 //"You can't put find()s in the update method." "I'm just testing right now."
                 //replace the 'physicalBodyTransform.Find("head").transform' with a 'theHead'
-                Vector3 relativedir = Quaternion.AngleAxis(angle, Vector3.up) * new Vector3(physicalBodyTransform.Find("head").transform.forward.normalized.x, 0, physicalBodyTransform.Find("head").transform.forward.normalized.z) * distance;
+                Vector3 relativedir = Quaternion.AngleAxis(angle, Vector3.up) * new Vector3(physicalBodyTransform.Find("head").transform.forward.normalized.x, 100, physicalBodyTransform.Find("head").transform.forward.normalized.z) * distance;
                 targetPosition = GhostTransform.position + relativedir;
+                RaycastHit hit;
+                Ray downRay = new Ray(transform.position, -Vector3.up);
+                if (Physics.Raycast(downRay, out hit))
+                {
+                    playerHeight = transform.position.y - hit.transform.position.y;
+                }
+                RaycastHit hit2;
+                Ray downRay2 = new Ray(targetPosition, -Vector3.up);
+                if (Physics.Raycast(downRay2, out hit2))
+                {
+                    targetPosition = new Vector3(targetPosition.x,hit2.transform.position.y+playerHeight/2,targetPosition.z);
+                }
 
                 //Kevin wishes to revisit the below
                 //Vector3 dashDir = new Vector3(Controller.GetAxis().x, 0.0f, Controller.GetAxis().y);
