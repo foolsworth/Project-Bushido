@@ -45,13 +45,14 @@ public class SceneTransitionScript_v3 : MonoBehaviour {
     private void FixedUpdate() {
         if(m_doesAccumulate)
             m_accumulatedTime += Time.fixedDeltaTime;
+        Debug.Log(m_accumulatedTime);
         m_destination = m_player.transform.position;
 
         m_tunnelParent.transform.position = Vector3.Lerp(m_source, m_destination, (m_accumulatedTime - m_waitTime) / m_animationDuration);
     }
 
     public void PauseTransition(bool unpause = false) {
-        m_doesAccumulate = !unpause;
+        m_doesAccumulate = unpause;
         Debug.Log("Transition has " + (unpause? "un" : "") + "paused.");
     }
 }

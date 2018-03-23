@@ -103,7 +103,7 @@ public class Dashing : MonoBehaviour {
         if (count)
         {
             elapsedTime += Time.deltaTime;
-            Debug.Log(elapsedTime);
+            //Debug.Log(elapsedTime);
         }
         
         }
