@@ -46,6 +46,8 @@ public class Dashing : MonoBehaviour {
     void Start()
     {
         theHead = physicalBodyTransform.Find("head").transform;
+
+        
     }
 
     void Awake()
@@ -72,7 +74,7 @@ public class Dashing : MonoBehaviour {
                 
                 physicalBody.transform.position = GhostTransform.position;
                 physicalBody.transform.rotation = GhostTransform.rotation;
-
+                physicalBodyTransform.position = GhostTransform.position;
                 instantiated = true;
             }
         }
