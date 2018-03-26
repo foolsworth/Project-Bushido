@@ -18,12 +18,15 @@ using ExitGames.Client.Photon;
         [Tooltip("The prefab to use for representing the player")]
         public GameObject playerPrefab;
 
+    GameObject spawnPos1;
+    GameObject spawnPos2;
 
-        #endregion
+    bool sceneLoaded = false;
+    #endregion
 
-        #region Private Variables
+    #region Private Variables
 
-        private GameObject instance;
+    private GameObject instance;
 
         #endregion
 
@@ -57,8 +60,31 @@ using ExitGames.Client.Photon;
                 {
                     Debug.Log("We are Instantiating LocalPlayer from " + SceneManagerHelper.ActiveSceneName);
 
-                    // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-                    PhotonNetwork.Instantiate(this.playerPrefab.name, Vector3.zero, Quaternion.identity, 0);
+
+                if (!sceneLoaded)
+                {
+                    if (SceneManagerHelper.ActiveSceneName == "Game")
+                    {
+                        spawnPos1 = GameObject.Find("spawnPos1");
+                        spawnPos2 = GameObject.Find("spawnPos2");
+
+                        if (!OurPlayerManager.player1Connected)
+                        {
+
+                            PhotonNetwork.Instantiate(this.playerPrefab.name, spawnPos1.transform.position, Quaternion.identity, 0);
+                            OurPlayerManager.player1Connected = true;
+                        }
+
+                        else
+                        {
+                            PhotonNetwork.Instantiate(this.playerPrefab.name, spawnPos2.transform.position, Quaternion.identity, 0);
+                        }
+
+                    }
+                    sceneLoaded = true;
+                }
+                // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
+               
                 }
                 else
                 {
@@ -76,8 +102,10 @@ using ExitGames.Client.Photon;
         /// </summary>
         void Update()
         {
-            // "back" button of phone equals "Escape". quit app if that's pressed
-            if (Input.GetKeyDown(KeyCode.Escape))
+
+      
+        // "back" button of phone equals "Escape". quit app if that's pressed
+        if (Input.GetKeyDown(KeyCode.Escape))
             {
                 QuitApplication();
             }

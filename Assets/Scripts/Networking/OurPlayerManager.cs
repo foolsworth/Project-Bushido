@@ -13,14 +13,11 @@ using UnityEngine.EventSystems;
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
 
-    GameObject spawnPos1;
-    GameObject spawnPos2;
-
-    bool sceneLoaded = false;
+   
 
     
 
-    bool player1Connected=false;
+    public static bool player1Connected=false;
     public static bool dead = false;
 
     #endregion
@@ -81,30 +78,7 @@ using UnityEngine.EventSystems;
         public void Update()
         {
         // we only process Inputs and check health if we are the local player
-        if (!sceneLoaded)
-        {
-            if (SceneManagerHelper.ActiveSceneName == "Game")
-            {
-                spawnPos1 = GameObject.Find("spawnPos1");
-                spawnPos2 = GameObject.Find("spawnPos2");
-
-                if (!player1Connected)
-                {
-
-                    GameObject.Find("GhostBody").transform.position = spawnPos1.transform.position;
-                    GameObject.Find("GhostBody").transform.rotation = spawnPos1.transform.rotation;
-                    player1Connected = true;
-                }
-
-                else
-                {
-                    GameObject.Find("GhostBody").transform.position = spawnPos2.transform.position;
-                    GameObject.Find("GhostBody").transform.rotation = spawnPos2.transform.rotation;
-                }
-
-            }
-            sceneLoaded = true;
-        }
+        
 
         }
 
@@ -232,7 +206,7 @@ using UnityEngine.EventSystems;
             }
             else
             {
-            this.player1Connected = (bool)stream.ReceiveNext();
+            player1Connected = (bool)stream.ReceiveNext();
             }
         }
 
