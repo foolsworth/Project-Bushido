@@ -16,8 +16,8 @@ public class swordCollision : MonoBehaviour {
             swordhit.Stop();
             swordhit.Play();
             transform.parent.GetComponent<Rigidbody>().velocity += collision.collider.gameObject.transform.parent.GetComponent<Rigidbody>().velocity;
-            collision.collider.gameObject.transform.parent.GetComponent<Rigidbody>().velocity += myVel;
-
+            collision.collider.gameObject.transform.parent.parent.GetComponent<Rigidbody>().velocity += myVel;
+            collision.collider.gameObject.transform.parent.parent.parent.GetComponent<OurPlayerManager>().takeDamage(10);
         }
     }
 

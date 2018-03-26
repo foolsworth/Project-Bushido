@@ -4,7 +4,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 
 public class OurPlayerManager : Photon.PunBehaviour, IPunObservable
     {
@@ -23,7 +23,7 @@ public class OurPlayerManager : Photon.PunBehaviour, IPunObservable
     bool sceneLoaded = false;
     public static bool dead = false;
 
-    int health = 10;
+    int health = 100;
     #endregion
 
 
@@ -73,6 +73,7 @@ public class OurPlayerManager : Photon.PunBehaviour, IPunObservable
         }
 
 
+
         /// <summary>
         /// MonoBehaviour method called on GameObject by Unity on every frame.
         /// Process Inputs if local player.
@@ -107,7 +108,19 @@ public class OurPlayerManager : Photon.PunBehaviour, IPunObservable
 
         public void takeDamage(int damage)
     {
-        health -= damage;
+        if (health > 0)
+        {
+            health -= damage;
+            if (gameObject.tag == "local")
+            {
+                GameObject.Find("me").GetComponent<Text>().text = "My health: " + health;
+
+            }
+            else
+            {
+                GameObject.Find("you").GetComponent<Text>().text = "Your health: " + health;
+            }
+        }
     }
 
         /// <summary>
