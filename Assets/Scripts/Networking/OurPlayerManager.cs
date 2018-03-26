@@ -17,7 +17,8 @@ using UnityEngine.EventSystems;
 
     
 
-    public static bool player1Connected=false;
+     bool player1Connected=false;
+     public static bool player1ConnectedStatic = false;
     public static bool dead = false;
 
     #endregion
@@ -77,6 +78,9 @@ using UnityEngine.EventSystems;
         /// </summary>
         public void Update()
         {
+
+        player1ConnectedStatic = player1Connected;
+
         // we only process Inputs and check health if we are the local player
         
 

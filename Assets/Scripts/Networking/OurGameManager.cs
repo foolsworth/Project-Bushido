@@ -68,11 +68,11 @@ using ExitGames.Client.Photon;
                         spawnPos1 = GameObject.Find("spawnPos1");
                         spawnPos2 = GameObject.Find("spawnPos2");
 
-                        if (!OurPlayerManager.player1Connected)
+                        if (!OurPlayerManager.player1ConnectedStatic)
                         {
 
                             PhotonNetwork.Instantiate(this.playerPrefab.name, spawnPos1.transform.position, Quaternion.identity, 0);
-                            OurPlayerManager.player1Connected = true;
+                            OurPlayerManager.player1ConnectedStatic = true;
                         }
 
                         else
