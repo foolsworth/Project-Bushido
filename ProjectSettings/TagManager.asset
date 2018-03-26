@@ -11,6 +11,7 @@ TagManager:
   - dangerNet
   - localArmorChild
   - Beam
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - realHand
   - blade
   - pbody
-  - 
+  - swordhand
   - 
   - 
   - 

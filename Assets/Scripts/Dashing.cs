@@ -8,7 +8,7 @@ public class Dashing : MonoBehaviour {
 
     public AudioSource noDashing;
 
-    private bool dashing = false;
+    public bool dashing = false;
 
     private SteamVR_TrackedObject trackedObj;
 
@@ -82,6 +82,7 @@ public class Dashing : MonoBehaviour {
         {
             count = false;
             if(elapsedTime >= dashCD) {
+                //PhysicalBodyRB.constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
                 elapsedTime = 0;
                 dashing = true;
                 Vector2 temp = new Vector2(Controller.GetAxis(Valve.VR.EVRButtonId.k_EButton_Axis0).x, Controller.GetAxis(Valve.VR.EVRButtonId.k_EButton_Axis0).y);
@@ -124,30 +125,42 @@ public class Dashing : MonoBehaviour {
         }
         else if (Controller.GetPressUp(SteamVR_Controller.ButtonMask.Touchpad) && instantiated)
         {
+            //if (dashing)
+            //{
+            //    PhysicalBodyRB.constraints = RigidbodyConstraints.FreezeAll;
+            //}
             count = true;
             dashing = false;
-            RaycastHit hit3;
-            Ray downRay3 = new Ray(physicalBodyTransform.position+new Vector3(0,100,0), -Vector3.up);
-            if (Physics.Raycast(downRay3, out hit3))
-            {
-                if (!hit3.transform.name.Contains("physicalBody"))
-                {
-                    physicalBodyTransform.position = new Vector3(physicalBodyTransform.position.x, hit3.transform.position.y + playerHeight / 2, physicalBodyTransform.position.z);
-                }
-            }
+            //RaycastHit hit3;
+            //Ray downRay3 = new Ray(physicalBodyTransform.position+new Vector3(0,100,0), -Vector3.up);
+            //if (Physics.Raycast(downRay3, out hit3))
+            //{
+            //    if (!hit3.transform.name.Contains("physicalBody"))
+            //    {
+            //        physicalBodyTransform.position = new Vector3(physicalBodyTransform.position.x, hit3.transform.position.y + playerHeight / 2, physicalBodyTransform.position.z);
+            //    }
+            //}
             GhostTransform.position = physicalBodyTransform.position;
+            
         }
         
         if (dashing && instantiated)
         {
             Debug.Log("Dats Dash YO!");
-            PhysicalBodyRB.position = Vector3.Lerp(PhysicalBodyRB.position, targetPosition, Time.deltaTime * dashSpeed);
+            PhysicalBodyRB.position =new Vector3( Mathf.Lerp(PhysicalBodyRB.position.x, targetPosition.x, Time.deltaTime * dashSpeed), PhysicalBodyRB.position.y, Mathf.Lerp(PhysicalBodyRB.position.z, targetPosition.z, Time.deltaTime * dashSpeed));
+
             //if(PhysicalBodyRB.position.magnitude > targetPosition.magnitude-0.5 && PhysicalBodyRB.position.magnitude < targetPosition.magnitude + 1)
             //{
-               
+
             //    GhostTransform.position = targetPosition;
             //}
         }
+
+        //if (!dashing)
+        //{
+        //    GhostTransform = physicalBody.transform;
+        //}
+
         if (count)
         {
             elapsedTime += Time.deltaTime;
