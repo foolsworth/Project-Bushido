@@ -17,8 +17,6 @@ using ExitGames.Client.Photon;
 
         [Tooltip("The prefab to use for representing the player")]
         public GameObject playerPrefab;
-
-
         #endregion
 
         #region Private Variables
@@ -35,7 +33,6 @@ using ExitGames.Client.Photon;
         void Start()
         {
             Instance = this;
-
             // in case we started this demo with the wrong scene being active, simply load the menu scene
             if (!PhotonNetwork.connected)
             {
@@ -57,8 +54,15 @@ using ExitGames.Client.Photon;
                 {
                     Debug.Log("We are Instantiating LocalPlayer from " + SceneManagerHelper.ActiveSceneName);
 
-                    // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
+                // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
+                if (PhotonNetwork.countOfPlayers == 1)
+                {
                     PhotonNetwork.Instantiate(this.playerPrefab.name, GameObject.Find("spawnPos1").transform.position, Quaternion.identity, 0);
+                }
+                else if (PhotonNetwork.countOfPlayers == 2)
+                {
+                    PhotonNetwork.Instantiate(this.playerPrefab.name, GameObject.Find("spawnPos2").transform.position, Quaternion.identity, 0);
+                }
                 }
                 else
                 {

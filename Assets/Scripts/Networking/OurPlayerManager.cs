@@ -23,7 +23,7 @@ public class OurPlayerManager : Photon.PunBehaviour, IPunObservable
     bool sceneLoaded = false;
     public static bool dead = false;
 
-
+    int health = 10;
     #endregion
 
 
@@ -88,22 +88,27 @@ public class OurPlayerManager : Photon.PunBehaviour, IPunObservable
             spawnPos1 = GameObject.Find("spawnPos1");
             spawnPos2 = GameObject.Find("spawnPos2");
 
-            if (GameObject.Find("PhysicalBody(Clone)") == null)
-            {
+            //if (GameObject.Find("PhysicalBody(Clone)") == null)
+            //{
 
-                //GameObject.Find("GhostBody").transform.position = spawnPos1.transform.position;
-                //GameObject.Find("GhostBody").transform.rotation = spawnPos1.transform.rotation;
-                //player1Connected = true;
-            }
+            //    //GameObject.Find("GhostBody").transform.position = spawnPos1.transform.position;
+            //    //GameObject.Find("GhostBody").transform.rotation = spawnPos1.transform.rotation;
+            //    //player1Connected = true;
+            //}
 
-            else
-            {
-                GameObject.Find("GhostBody").transform.position = spawnPos2.transform.position;
-                GameObject.Find("GhostBody").transform.rotation = spawnPos2.transform.rotation;
-            }
-            sceneLoaded = true;
+            //else
+            //{
+            //    GameObject.Find("GhostBody").transform.position = spawnPos2.transform.position;
+            //    GameObject.Find("GhostBody").transform.rotation = spawnPos2.transform.rotation;
+            //}
+            //sceneLoaded = true;
         }
         }
+
+        public void takeDamage(int damage)
+    {
+        health -= damage;
+    }
 
         /// <summary>
         /// MonoBehaviour method called when the Collider 'other' enters the trigger.
@@ -225,11 +230,11 @@ public class OurPlayerManager : Photon.PunBehaviour, IPunObservable
             if (stream.isWriting)
             {
             // We own this player: send the others our data
-            stream.SendNext(player1Connected);
+            stream.SendNext(health);
             }
             else
             {
-            this.player1Connected = (bool)stream.ReceiveNext();
+            this.health = (int)stream.ReceiveNext();
             }
         }
 
