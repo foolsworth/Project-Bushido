@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CheckLocal : Photon.MonoBehaviour
 {
-
+    bool set = false;
     // Use this for initialization
     void Start()
     {
@@ -18,13 +18,13 @@ public class CheckLocal : Photon.MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!photonView.isMine)
+        if (!photonView.isMine&& !set)
         {
             gameObject.transform.Find("head").GetComponent<lerpGhostHands>().enabled = false;
             gameObject.transform.Find("left").GetComponent<lerpGhostHands>().enabled = false;
             gameObject.transform.Find("right").GetComponent<lerpGhostHands>().enabled = false;
             gameObject.transform.Find("right").GetComponent<grabsword>().enabled = false;
-            return;
+            set = true;
         }
 
 

@@ -3,9 +3,10 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 
-    public class OurPlayerManager : Photon.PunBehaviour, IPunObservable
+public class OurPlayerManager : Photon.PunBehaviour, IPunObservable
     {
         #region Public Variables
 
@@ -82,7 +83,7 @@ using UnityEngine.EventSystems;
         {
         // we only process Inputs and check health if we are the local player
 
-        if (SceneManagerHelper.ActiveSceneName == "Game"&& !sceneLoaded)
+        if (SceneManager.GetActiveScene().name == "Game"&& !sceneLoaded)
         {
             spawnPos1 = GameObject.Find("spawnPos1");
             spawnPos2 = GameObject.Find("spawnPos2");
@@ -90,9 +91,9 @@ using UnityEngine.EventSystems;
             if (GameObject.Find("PhysicalBody(Clone)") == null)
             {
 
-                GameObject.Find("GhostBody").transform.position = spawnPos1.transform.position;
-                GameObject.Find("GhostBody").transform.rotation = spawnPos1.transform.rotation;
-                player1Connected = true;
+                //GameObject.Find("GhostBody").transform.position = spawnPos1.transform.position;
+                //GameObject.Find("GhostBody").transform.rotation = spawnPos1.transform.rotation;
+                //player1Connected = true;
             }
 
             else
