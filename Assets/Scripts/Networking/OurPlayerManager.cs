@@ -16,9 +16,11 @@ using UnityEngine.EventSystems;
     GameObject spawnPos1;
     GameObject spawnPos2;
 
+    bool sceneLoaded = false;
+
     
 
-    bool player1Connected = false;
+    bool player1Connected=false;
     public static bool dead = false;
 
     #endregion
@@ -51,21 +53,6 @@ using UnityEngine.EventSystems;
         public void Start()
         {
 
-        spawnPos1 = GameObject.Find("spawnPos1");
-        spawnPos2 = GameObject.Find("spawnPos2");
-
-        if (!player1Connected) {
-
-            GameObject.Find("GhostBody").transform.position = spawnPos1.transform.position;
-            GameObject.Find("GhostBody").transform.rotation = spawnPos1.transform.rotation;
-            player1Connected = true;
-        }
-
-        else
-        {
-            GameObject.Find("GhostBody").transform.position = spawnPos2.transform.position;
-            GameObject.Find("GhostBody").transform.rotation = spawnPos2.transform.rotation;
-        }
 
            
       
@@ -93,8 +80,31 @@ using UnityEngine.EventSystems;
         /// </summary>
         public void Update()
         {
-            // we only process Inputs and check health if we are the local player
-      
+        // we only process Inputs and check health if we are the local player
+        if (!sceneLoaded)
+        {
+            if (SceneManagerHelper.ActiveSceneName == "Game")
+            {
+                spawnPos1 = GameObject.Find("spawnPos1");
+                spawnPos2 = GameObject.Find("spawnPos2");
+
+                if (!player1Connected)
+                {
+
+                    GameObject.Find("GhostBody").transform.position = spawnPos1.transform.position;
+                    GameObject.Find("GhostBody").transform.rotation = spawnPos1.transform.rotation;
+                    player1Connected = true;
+                }
+
+                else
+                {
+                    GameObject.Find("GhostBody").transform.position = spawnPos2.transform.position;
+                    GameObject.Find("GhostBody").transform.rotation = spawnPos2.transform.rotation;
+                }
+
+            }
+            sceneLoaded = true;
+        }
 
         }
 

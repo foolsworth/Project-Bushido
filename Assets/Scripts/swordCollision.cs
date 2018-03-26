@@ -23,7 +23,7 @@ public class swordCollision : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        swordhit = GetComponent<AudioSource>();
+    
 	}
 	
 	// Update is called once per frame
