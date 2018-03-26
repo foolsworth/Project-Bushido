@@ -8,20 +8,20 @@ public class lerpBody : MonoBehaviour {
     public int updateSpeed = 20;
 	// Use this for initialization
 	void Start () {
-        head =gameObject.transform.parent.Find("head").transform;
+       // head =gameObject.transform.parent.Find("head").transform.Find("Neck").transform;
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (transform.localPosition != head.localPosition)
+        if (transform.position != head.position)
         {
-            transform.localPosition =Vector3.Lerp(transform.localPosition, head.localPosition, Time.deltaTime*updateSpeed);
+            transform.position =Vector3.Lerp(transform.position, head.position, Time.deltaTime*updateSpeed);
         }
-        if (transform.localRotation != head.localRotation)
+        if (transform.rotation != head.rotation)
         {
-            Vector3 headrotation = head.localRotation.eulerAngles;
-            transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(0, headrotation.y, 0), Time.deltaTime * updateSpeed);
+            Vector3 headrotation = head.rotation.eulerAngles;
+            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, headrotation.y, 0), Time.deltaTime * updateSpeed);
         }
     }
 }

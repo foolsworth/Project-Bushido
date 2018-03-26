@@ -13,7 +13,7 @@ public class grabsword : MonoBehaviour {
     void OnTriggerEnter(Collider collision)
     {
         Debug.Log("sword collision");
-        if (collision.gameObject.layer == 9 && collision.gameObject.tag == "Sword")
+        if ( collision.gameObject.tag == "Sword")
         {
             closedHand.SetActive(true);
             openHand.SetActive(false);
@@ -25,11 +25,12 @@ public class grabsword : MonoBehaviour {
             }
             
             
-            collision.gameObject.transform.parent = gameObject.transform;
             collision.gameObject.GetComponent<Collider>().enabled = false;
+            //collision.gameObject.GetComponent<MeshCollider>().enabled = true;
             collision.gameObject.transform.position = targetTransform.position;
             collision.gameObject.transform.rotation = targetTransform.rotation;
             collision.gameObject.transform.localScale = targetTransform.localScale;
+            collision.gameObject.transform.parent = this.transform;
         }
 
     }

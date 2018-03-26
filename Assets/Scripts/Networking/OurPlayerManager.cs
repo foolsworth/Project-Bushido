@@ -3,9 +3,10 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 
-    public class OurPlayerManager : Photon.PunBehaviour, IPunObservable
+public class OurPlayerManager : Photon.PunBehaviour, IPunObservable
     {
         #region Public Variables
 
@@ -19,7 +20,9 @@ using UnityEngine.EventSystems;
     
 
     bool player1Connected = false;
+    bool sceneLoaded = false;
     public static bool dead = false;
+
 
     #endregion
 
@@ -50,22 +53,7 @@ using UnityEngine.EventSystems;
         /// </summary>
         public void Start()
         {
-
-        spawnPos1 = GameObject.Find("spawnPos1");
-        spawnPos2 = GameObject.Find("spawnPos2");
-
-        if (!player1Connected) {
-
-            GameObject.Find("GhostBody").transform.position = spawnPos1.transform.position;
-            GameObject.Find("GhostBody").transform.rotation = spawnPos1.transform.rotation;
-            player1Connected = true;
-        }
-
-        else
-        {
-            GameObject.Find("GhostBody").transform.position = spawnPos2.transform.position;
-            GameObject.Find("GhostBody").transform.rotation = spawnPos2.transform.rotation;
-        }
+        
 
            
       
@@ -93,9 +81,28 @@ using UnityEngine.EventSystems;
         /// </summary>
         public void Update()
         {
-            // we only process Inputs and check health if we are the local player
-      
+        // we only process Inputs and check health if we are the local player
 
+        if (SceneManager.GetActiveScene().name == "Game"&& !sceneLoaded)
+        {
+            spawnPos1 = GameObject.Find("spawnPos1");
+            spawnPos2 = GameObject.Find("spawnPos2");
+
+            if (GameObject.Find("PhysicalBody(Clone)") == null)
+            {
+
+                //GameObject.Find("GhostBody").transform.position = spawnPos1.transform.position;
+                //GameObject.Find("GhostBody").transform.rotation = spawnPos1.transform.rotation;
+                //player1Connected = true;
+            }
+
+            else
+            {
+                GameObject.Find("GhostBody").transform.position = spawnPos2.transform.position;
+                GameObject.Find("GhostBody").transform.rotation = spawnPos2.transform.rotation;
+            }
+            sceneLoaded = true;
+        }
         }
 
         /// <summary>
