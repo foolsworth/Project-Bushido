@@ -79,7 +79,8 @@ using UnityEngine.EventSystems;
         public void Update()
         {
 
-        player1ConnectedStatic = player1Connected;
+
+        player1Connected=player1ConnectedStatic;
 
         // we only process Inputs and check health if we are the local player
         
@@ -210,7 +211,7 @@ using UnityEngine.EventSystems;
             }
             else
             {
-            player1Connected = (bool)stream.ReceiveNext();
+            player1ConnectedStatic = (bool)stream.ReceiveNext();
             }
         }
 
