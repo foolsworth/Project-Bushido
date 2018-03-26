@@ -103,7 +103,7 @@ using ExitGames.Client.Photon;
             {
                 Debug.Log("OnPhotonPlayerConnected isMasterClient " + PhotonNetwork.isMasterClient); // called before OnPhotonPlayerDisconnected
 
-                LoadArena();
+                //LoadArena();
             }
         }
 
