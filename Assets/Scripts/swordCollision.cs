@@ -8,22 +8,20 @@ public class swordCollision : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-
-        Debug.Log("Collision");
-        if (collision.collider.gameObject.layer == 10)
+        if (collision.collider.gameObject.layer == 11)
         {
-            //Vector3 myVel = transform.parent.GetComponent<Rigidbody>().velocity;
+            Vector3 myVel = transform.parent.GetComponent<Rigidbody>().velocity;
             
 
             swordhit.Stop();
             swordhit.Play();
-            //try
-            //{
-            //    transform.parent.GetComponent<Rigidbody>().velocity += collision.collider.gameObject.transform.parent.GetComponent<Rigidbody>().velocity;
-            //    collision.collider.gameObject.transform.parent.parent.GetComponent<Rigidbody>().velocity += myVel;
-            //}
-            //catch { }
-            collision.collider.gameObject.transform.parent.GetComponent<OurPlayerManager>().takeDamage(10);
+            transform.parent.GetComponent<Rigidbody>().velocity += collision.collider.gameObject.transform.parent.GetComponent<Rigidbody>().velocity;
+            collision.collider.gameObject.transform.parent.GetComponent<Rigidbody>().velocity += myVel;
+
+        }
+        if (collision.collider.gameObject.layer == 13)
+        {
+            collision.collider.transform.parent.GetComponent<OurPlayerManager>().takeDamage(10);
         }
     }
 
