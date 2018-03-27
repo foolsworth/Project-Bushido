@@ -244,11 +244,13 @@ public class OurPlayerManager : Photon.PunBehaviour, IPunObservable
             {
             // We own this player: send the others our data
             stream.SendNext(health);
+            stream.SendNext(GameObject.FindGameObjectWithTag("local").transform.Find("rightM").Find("Tsujigiri_FirstHero_HandGauntlet_RIGHT").GetComponent<grabsword>().swordgrabbed);
             }
             else
             {
             this.health = (int)stream.ReceiveNext();
-            }
+            GameObject.FindGameObjectWithTag("local").transform.Find("rightM").Find("Tsujigiri_FirstHero_HandGauntlet_RIGHT").GetComponent<grabsword>().swordgrabbed = (bool)stream.ReceiveNext();
+        }
         }
 
         #endregion

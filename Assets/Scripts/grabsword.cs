@@ -9,7 +9,7 @@ public class grabsword : MonoBehaviour {
     public GameObject openGHand;
     public GameObject closedGHand;
     public AudioSource unsheath;
-    bool swordgrabbed = false;
+    public bool swordgrabbed = false;
 
     void OnTriggerEnter(Collider collision)
     {
@@ -33,6 +33,25 @@ public class grabsword : MonoBehaviour {
             collision.gameObject.transform.localScale = targetTransform.localScale;
             collision.gameObject.transform.parent = this.transform;
             swordgrabbed = true;
+        }
+        if(swordgrabbed && !closedHand.activeSelf)
+        {
+            closedHand.SetActive(true);
+            openHand.SetActive(false);
+            if (closedGHand != null && openGHand != null)
+            {
+                closedGHand.SetActive(true);
+                openGHand.SetActive(false);
+                unsheath.Play();
+            }
+
+
+            collision.gameObject.GetComponent<Collider>().enabled = false;
+            //collision.gameObject.GetComponent<MeshCollider>().enabled = true;
+            collision.gameObject.transform.position = targetTransform.position;
+            collision.gameObject.transform.rotation = targetTransform.rotation;
+            collision.gameObject.transform.localScale = targetTransform.localScale;
+            collision.gameObject.transform.parent = this.transform;
         }
 
     }
