@@ -10,8 +10,8 @@ TagManager:
   - local
   - dangerNet
   - localArmorChild
-  - Beam
-  - Fire
+  - Menu_Proceed
+  - Menu_Option0
   layers:
   - Default
   - TransparentFX
@@ -23,9 +23,9 @@ TagManager:
   - 
   - CanTeleport
   - realHand
-  - blade
-  - pbody
-  - swordhand
+  - 
+  - 
+  - 
   - 
   - 
   - 
