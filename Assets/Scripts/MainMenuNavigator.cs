@@ -41,7 +41,6 @@ public class MainMenuNavigator : MonoBehaviour {
 
             //Check if the scene has loaded
             if (m_LoadingNextScene.isDone) {
-
                 //unpause the transition
                 m_transitionController.PauseTransition(true);
             }
@@ -59,6 +58,15 @@ public class MainMenuNavigator : MonoBehaviour {
     private void Update() {
         if(m_LoadingNextScene.isDone)
             m_transitionController.PauseTransition(m_selectionMade);  //unpause if argument is true, selection made means we should unpause
+
+        if(m_transitionController.m_isDone) {
+            m_LoadingNextScene.allowSceneActivation = true;
+        }
+        /*
+        if(m_LoadingNextScene.isDone && m_transitionController.m_isDone) {
+            
+            SceneManager.SetActiveScene(m_LoadingNextScene)
+        }*/
     }
 
     private void setTransitionLength(float givenDuration) {

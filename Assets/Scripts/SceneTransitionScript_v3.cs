@@ -14,6 +14,7 @@ public class SceneTransitionScript_v3 : MonoBehaviour {
     //parameters  //These will be overridden in the editor if a different value is given.
     public float m_waitTime = 5.0f;
     public float m_animationDuration = 5.0f;
+    public bool m_isDone { get; private set; }
 
     private Vector3 m_source;
     private Vector3 m_destination;
@@ -25,6 +26,7 @@ public class SceneTransitionScript_v3 : MonoBehaviour {
     void Start () {
         Debug.Log("Transition started...?");
         m_doesAccumulate = true;
+        m_isDone = false;
         m_accumulatedTime = 0.0f;
         m_tunnelParent = gameObject;
         m_tunnelParent.transform.position = Vector3.Normalize(Vector3.ProjectOnPlane(m_player.transform.forward, Vector3.up)) * 150.0f;
@@ -49,6 +51,8 @@ public class SceneTransitionScript_v3 : MonoBehaviour {
         m_destination = m_player.transform.position;
 
         m_tunnelParent.transform.position = Vector3.Lerp(m_source, m_destination, (m_accumulatedTime - m_waitTime) / m_animationDuration);
+        
+        m_isDone = (Vector3.Distance(m_source, m_destination) <= 1.0e-4f);
     }
 
     public void PauseTransition(bool unpause = false) {
