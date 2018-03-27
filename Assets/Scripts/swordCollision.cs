@@ -21,8 +21,12 @@ public class swordCollision : MonoBehaviour {
         }
         if (collision.collider.gameObject.layer == 13)
         {
+            Vector3 myVel = transform.parent.GetComponent<Rigidbody>().velocity;
             collision.collider.transform.parent.GetComponent<OurPlayerManager>().takeDamage(10);
+            swordhit.Stop();
             swordhit.Play();
+            transform.parent.GetComponent<Rigidbody>().velocity += collision.collider.gameObject.transform.parent.GetComponent<Rigidbody>().velocity;
+            collision.collider.gameObject.transform.parent.GetComponent<Rigidbody>().velocity += myVel;
         }
     }
 

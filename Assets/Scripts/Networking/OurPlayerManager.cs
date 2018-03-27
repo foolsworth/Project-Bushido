@@ -26,7 +26,7 @@ public class OurPlayerManager : Photon.PunBehaviour, IPunObservable
     public int checking = 0;
     public bool unsheathed = false;
 
-    int health = 100;
+    public int health = 100;
     #endregion
 
 
