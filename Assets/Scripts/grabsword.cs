@@ -14,7 +14,7 @@ public class grabsword : MonoBehaviour {
     void OnTriggerEnter(Collider collision)
     {
         Debug.Log("sword collision");
-        if ( collision.gameObject.tag == "Sword" && !swordgrabbed)
+        if ( collision.gameObject.tag == "Sword" && !GameObject.FindGameObjectWithTag("local").GetComponent<OurPlayerManager>().unsheathed)
         {
             closedHand.SetActive(true);
             openHand.SetActive(false);
@@ -32,9 +32,9 @@ public class grabsword : MonoBehaviour {
             collision.gameObject.transform.rotation = targetTransform.rotation;
             collision.gameObject.transform.localScale = targetTransform.localScale;
             collision.gameObject.transform.parent = this.transform;
-            swordgrabbed = true;
+            GameObject.FindGameObjectWithTag("local").GetComponent<OurPlayerManager>().unsheathed = true;
         }
-        if(swordgrabbed && !closedHand.activeSelf)
+        if(GameObject.FindGameObjectWithTag("local").GetComponent<OurPlayerManager>().unsheathed && !closedHand.activeSelf)
         {
             closedHand.SetActive(true);
             openHand.SetActive(false);
