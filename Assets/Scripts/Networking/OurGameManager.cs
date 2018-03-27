@@ -55,7 +55,7 @@ using ExitGames.Client.Photon;
                     Debug.Log("We are Instantiating LocalPlayer from " + SceneManagerHelper.ActiveSceneName);
 
                 // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-                if (PhotonNetwork.countOfPlayers == 1)
+                if (PhotonNetwork.countOfPlayers <= 1)
                 {
                     GameObject.Find("Spectator").SetActive(false);
                     PhotonNetwork.Instantiate(this.playerPrefab.name, GameObject.Find("spawnPos1").transform.position, Quaternion.identity, 0);
