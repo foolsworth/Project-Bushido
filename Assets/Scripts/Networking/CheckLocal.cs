@@ -24,6 +24,15 @@ public class CheckLocal : Photon.MonoBehaviour
             gameObject.transform.Find("left").GetComponent<lerpGhostHands>().enabled = false;
             gameObject.transform.Find("right").GetComponent<lerpGhostHands>().enabled = false;
             gameObject.transform.Find("right").GetComponent<grabsword>().enabled = false;
+
+            gameObject.transform.Find("headM").gameObject.layer = 13;
+            gameObject.transform.Find("bodyM").gameObject.layer = 13;
+            gameObject.transform.Find("bodyM").Find("Tsujigiri_Blade_Textured").gameObject.layer = 11;
+            gameObject.transform.Find("rightM").gameObject.layer = 13;
+            gameObject.transform.Find("rightM").Find("Tsujigiri_FirstHero_HandGauntlet_RIGHT").gameObject.layer = 13;
+            gameObject.transform.Find("leftM").gameObject.layer = 13;
+            gameObject.transform.Find("leftM").Find("Tsujigiri_FirstHero_HandGauntlet_LEFT").gameObject.layer = 13;
+
             set = true;
         }
 

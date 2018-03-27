@@ -12,6 +12,7 @@ TagManager:
   - localArmorChild
   - Menu_Proceed
   - Menu_Option0
+  - Beam
   layers:
   - Default
   - TransparentFX
@@ -23,10 +24,10 @@ TagManager:
   - 
   - CanTeleport
   - realHand
-  - 
-  - 
-  - 
-  - 
+  - blade
+  - bladeE
+  - rightHand
+  - realHandE
   - 
   - 
   - 

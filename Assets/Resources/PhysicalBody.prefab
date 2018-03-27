@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 4364098258039826}
   - component: {fileID: 198077531379913828}
   - component: {fileID: 199579848799285562}
-  m_Layer: 10
+  m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1096,7 +1096,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1685651962551714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.043167, y: -8.842409, z: -5.819663}
+  m_LocalPosition: {x: -4.434183, y: 0.12123144, z: 0.07395637}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4671587714646584}
@@ -4882,7 +4882,7 @@ SpringJoint:
   m_ConnectedBody: {fileID: 54283822914819762}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 0.00000023841858, z: 0.00000047683716}
+  m_ConnectedAnchor: {x: 0, y: 0, z: 0.00000029802322}
   serializedVersion: 2
   m_Spring: 1000
   m_Damper: 20
