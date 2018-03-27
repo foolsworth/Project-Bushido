@@ -10,7 +10,7 @@ public class grabsword : MonoBehaviour {
     public GameObject closedGHand;
     public AudioSource unsheath;
     public bool swordgrabbed = false;
-
+    public GameObject sword;
     void OnTriggerEnter(Collider collision)
     {
         Debug.Log("sword collision");
@@ -34,25 +34,7 @@ public class grabsword : MonoBehaviour {
             collision.gameObject.transform.parent = this.transform;
             GameObject.FindGameObjectWithTag("local").GetComponent<OurPlayerManager>().unsheathed = true;
         }
-        if(GameObject.FindGameObjectWithTag("local").GetComponent<OurPlayerManager>().unsheathed && collision.gameObject.transform.position != targetTransform.position)
-        {
-            closedHand.SetActive(true);
-            openHand.SetActive(false);
-            if (closedGHand != null && openGHand != null)
-            {
-                closedGHand.SetActive(true);
-                openGHand.SetActive(false);
-                unsheath.Play();
-            }
-
-
-            collision.gameObject.GetComponent<Collider>().enabled = false;
-            //collision.gameObject.GetComponent<MeshCollider>().enabled = true;
-            collision.gameObject.transform.position = targetTransform.position;
-            collision.gameObject.transform.rotation = targetTransform.rotation;
-            collision.gameObject.transform.localScale = targetTransform.localScale;
-            collision.gameObject.transform.parent = this.transform;
-        }
+       
 
     }
 
@@ -68,6 +50,24 @@ public class grabsword : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
+        if (GameObject.FindGameObjectWithTag("local").GetComponent<OurPlayerManager>().unsheathed && sword.transform.position != targetTransform.position)
+        {
+            closedHand.SetActive(true);
+            openHand.SetActive(false);
+            if (closedGHand != null && openGHand != null)
+            {
+                closedGHand.SetActive(true);
+                openGHand.SetActive(false);
+                unsheath.Play();
+            }
+
+
+            sword.GetComponent<Collider>().enabled = false;
+            //sword.GetComponent<MeshCollider>().enabled = true;
+            sword.transform.position = targetTransform.position;
+            sword.transform.rotation = targetTransform.rotation;
+            sword.transform.localScale = targetTransform.localScale;
+            sword.transform.parent = this.transform;
+        }
+    }
 }

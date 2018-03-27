@@ -504,6 +504,7 @@ GameObject:
   - component: {fileID: 82138749629923048}
   - component: {fileID: 114413496836439558}
   - component: {fileID: 65609116075066158}
+  - component: {fileID: 65046230948717022}
   m_Layer: 0
   m_Name: GhostBody
   m_TagString: Untagged
@@ -2799,6 +2800,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!65 &65046230948717022
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1726686169548272}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 3.3, y: 0, z: 2.55}
+  m_Center: {x: 0, y: 0.01, z: 0}
 --- !u!65 &65573156784480706
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -2807,7 +2820,7 @@ BoxCollider:
   m_GameObject: {fileID: 1762433368330936}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.14, y: 0.07, z: 0.05}
   m_Center: {x: 0, y: -0.04, z: 0.02}
@@ -2831,7 +2844,7 @@ BoxCollider:
   m_GameObject: {fileID: 1615876009912344}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 0.14, y: 0.07, z: 0.05}
   m_Center: {x: 0, y: -0.04, z: 0.02}
