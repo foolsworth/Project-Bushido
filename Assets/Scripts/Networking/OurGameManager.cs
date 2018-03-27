@@ -57,13 +57,22 @@ using ExitGames.Client.Photon;
                 // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
                 if (PhotonNetwork.countOfPlayers == 1)
                 {
+                    GameObject.Find("Spectator").SetActive(false);
                     PhotonNetwork.Instantiate(this.playerPrefab.name, GameObject.Find("spawnPos1").transform.position, Quaternion.identity, 0);
+                    
                 }
                 else if (PhotonNetwork.countOfPlayers == 2)
                 {
+                    GameObject.Find("Spectator").SetActive(false);
                     PhotonNetwork.Instantiate(this.playerPrefab.name, GameObject.Find("spawnPos2").transform.position, Quaternion.identity, 0);
                 }
+                else if (PhotonNetwork.countOfPlayers == 3)
+                {
+                    GameObject.Find("[SteamVR]").SetActive(false);
+                    GameObject.Find("GhostBody").SetActive(false);
+
                 }
+            }
                 else
                 {
 
