@@ -1094,7 +1094,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1685651962551714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1869566, y: -0.016585588, z: 4.0070844}
+  m_LocalPosition: {x: -32.106056, y: -0.9595294, z: -2.3579664}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4671587714646584}
@@ -4045,8 +4045,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114512920962553434}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 2
-  instantiationId: 2
+  viewIdField: 1
+  instantiationId: 1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114177188099648120
@@ -4239,8 +4239,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114193140661599750}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 4
-  instantiationId: 4
+  viewIdField: 3
+  instantiationId: 3
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114316386535061206
@@ -4371,6 +4371,8 @@ MonoBehaviour:
   openGHand: {fileID: 0}
   closedGHand: {fileID: 0}
   unsheath: {fileID: 0}
+  swordgrabbed: 0
+  sword: {fileID: 1650214716732984}
 --- !u!114 &114520862799641390
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4417,6 +4419,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5574fc4ddeb770147817756137415c5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  checking: 0
+  unsheathed: 0
 --- !u!114 &114585420717320412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4464,8 +4468,8 @@ MonoBehaviour:
   - {fileID: 114712086998628358}
   - {fileID: 114558999319489220}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 5
-  instantiationId: 5
+  viewIdField: 4
+  instantiationId: 4
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114607730704255874
@@ -4562,6 +4566,8 @@ MonoBehaviour:
   openGHand: {fileID: 0}
   closedGHand: {fileID: 0}
   unsheath: {fileID: 0}
+  swordgrabbed: 0
+  sword: {fileID: 0}
 --- !u!114 &114780376012230450
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4618,8 +4624,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114234145511473172}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 3
-  instantiationId: 3
+  viewIdField: 2
+  instantiationId: 2
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!135 &135644389923784518
@@ -4716,8 +4722,8 @@ SkinnedMeshRenderer:
   m_BlendShapeWeights: []
   m_RootBone: {fileID: 0}
   m_AABB:
-    m_Center: {x: -2.1207275, y: 11.579136, z: -2.4578705}
-    m_Extent: {x: 2.5204897, y: 8.527863, z: 1.3358119}
+    m_Center: {x: -2.1207275, y: 11.579134, z: -2.457878}
+    m_Extent: {x: 2.5205135, y: 8.527863, z: 1.3358119}
   m_DirtyAABB: 0
 --- !u!138 &138490335610934522
 FixedJoint:
@@ -4789,7 +4795,7 @@ SpringJoint:
   m_ConnectedBody: {fileID: 54283822914819762}
   m_Anchor: {x: 0, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.00000023841858, y: 0, z: 0.00000047683716}
+  m_ConnectedAnchor: {x: 0, y: 0, z: 0.00000023841858}
   serializedVersion: 2
   m_Spring: 1000
   m_Damper: 20
