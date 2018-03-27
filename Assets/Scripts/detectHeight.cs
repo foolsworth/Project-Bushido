@@ -31,12 +31,11 @@ public class detectHeight : MonoBehaviour {
             if (!dashHand.GetComponent<Dashing>().dashing)
             {
                 bodyArea.position = new Vector3(bodyArea.position.x, transform.position.y, bodyArea.position.z);
-                ghostArea.position = new Vector3(bodyArea.position.x, transform.position.y, bodyArea.position.z);
+                ghostArea.position = bodyArea.position;
             }
             else
             {
                 bodyArea.position = new Vector3(bodyArea.position.x, transform.position.y, bodyArea.position.z);
-                ghostArea.position = bodyArea.position;
             }
         }
 	}
