@@ -22,6 +22,7 @@ public class swordCollision : MonoBehaviour {
         if (collision.collider.gameObject.layer == 13)
         {
             collision.collider.transform.parent.GetComponent<OurPlayerManager>().takeDamage(10);
+            swordhit.Play();
         }
     }
 
