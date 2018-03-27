@@ -34,7 +34,7 @@ public class grabsword : MonoBehaviour {
             collision.gameObject.transform.parent = this.transform;
             GameObject.FindGameObjectWithTag("local").GetComponent<OurPlayerManager>().unsheathed = true;
         }
-        if(GameObject.FindGameObjectWithTag("local").GetComponent<OurPlayerManager>().unsheathed && !closedHand.activeSelf)
+        if(GameObject.FindGameObjectWithTag("local").GetComponent<OurPlayerManager>().unsheathed && collision.gameObject.transform.position != targetTransform.position)
         {
             closedHand.SetActive(true);
             openHand.SetActive(false);
