@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -217,10 +217,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 23544028344826426, guid: beccd42234ec9e04eb5b2ed2752b2ed9,
+        type: 2}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c9bb0a30f1b4ef04480c6e95e051ee76, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: beccd42234ec9e04eb5b2ed2752b2ed9, type: 2}
   m_IsPrefabParent: 0
---- !u!43 &1357924991
+--- !u!43 &893548688
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -350,12 +355,48 @@ Mesh:
   m_BakedConvexCollisionMesh: 
   m_BakedTriangleCollisionMesh: 
   m_MeshOptimized: 0
---- !u!1 &1527456472 stripped
+--- !u!1 &976935157
 GameObject:
-  m_PrefabParentObject: {fileID: 1865708304373794, guid: beccd42234ec9e04eb5b2ed2752b2ed9,
-    type: 2}
-  m_PrefabInternal: {fileID: 534044715}
---- !u!21 &1844601879
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 976935159}
+  - component: {fileID: 976935158}
+  m_Layer: 0
+  m_Name: Launcher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &976935158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 976935157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a9aac635c937ba40943dd898ed89856, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxPlayersPerRoom: 2
+--- !u!4 &976935159
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 976935157}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &1505864976
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -388,6 +429,11 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+--- !u!1 &1527456472 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1865708304373794, guid: beccd42234ec9e04eb5b2ed2752b2ed9,
+    type: 2}
+  m_PrefabInternal: {fileID: 534044715}
 --- !u!1001 &1898883794
 Prefab:
   m_ObjectHideFlags: 0
@@ -493,12 +539,17 @@ Prefab:
         type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 1357924991}
+      objectReference: {fileID: 893548688}
     - target: {fileID: 23369664759296636, guid: 9a13357a4e33c964d9ba90b0cbd6cb03,
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1844601879}
+      objectReference: {fileID: 1505864976}
+    - target: {fileID: 114366428462352712, guid: 9a13357a4e33c964d9ba90b0cbd6cb03,
+        type: 2}
+      propertyPath: Launcher
+      value: 
+      objectReference: {fileID: 976935157}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a13357a4e33c964d9ba90b0cbd6cb03, type: 2}
   m_IsPrefabParent: 0

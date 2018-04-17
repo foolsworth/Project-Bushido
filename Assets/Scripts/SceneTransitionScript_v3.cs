@@ -16,6 +16,7 @@ public class SceneTransitionScript_v3 : MonoBehaviour {
     public float m_animationDuration = 5.0f;
     public bool m_isDone { get; private set; }
 
+
     private Vector3 m_source;
     private Vector3 m_destination;
 
@@ -53,6 +54,7 @@ public class SceneTransitionScript_v3 : MonoBehaviour {
         m_tunnelParent.transform.position = Vector3.Lerp(m_source, m_destination, (m_accumulatedTime - m_waitTime) / m_animationDuration);
         
         m_isDone = (Vector3.Distance(m_source, m_destination) <= 1.0e-4f);
+
     }
 
     public void PauseTransition(bool unpause = false) {

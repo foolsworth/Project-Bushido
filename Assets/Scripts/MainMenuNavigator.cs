@@ -11,6 +11,8 @@ public class MainMenuNavigator : MonoBehaviour {
     public AsyncOperation m_LoadingNextScene;
     public string m_NextSceneName = "Launcher";
 
+    public GameObject Launcher;
+
     private void Awake() {
         Debug.Log("Menu awake ...");
     }
@@ -56,11 +58,14 @@ public class MainMenuNavigator : MonoBehaviour {
     }
 
     private void Update() {
-        if(m_LoadingNextScene.isDone)
+        if (m_LoadingNextScene.isDone)
+        {
             m_transitionController.PauseTransition(m_selectionMade);  //unpause if argument is true, selection made means we should unpause
-
-        if(m_transitionController.m_isDone) {
+        }
+        if (m_transitionController.m_isDone)
+        {
             m_LoadingNextScene.allowSceneActivation = true;
+            Launcher.GetComponent<OurLauncher>().Connect();
         }
         /*
         if(m_LoadingNextScene.isDone && m_transitionController.m_isDone) {

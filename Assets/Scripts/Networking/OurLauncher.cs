@@ -33,7 +33,7 @@ using UnityEngine.SceneManagement;
 
         void Start()
     {
-        Connect();
+        //Connect();
     }
 
     
