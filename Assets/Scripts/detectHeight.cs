@@ -33,7 +33,7 @@ public class detectHeight : MonoBehaviour {
                 bodyArea.position = new Vector3(bodyArea.position.x, transform.position.y, bodyArea.position.z);
                 ghostArea.position = bodyArea.position;
             }
-            else
+            else if (!OurPlayerManager.dead)
             {
                 bodyArea.position = new Vector3(bodyArea.position.x, transform.position.y, bodyArea.position.z);
             }

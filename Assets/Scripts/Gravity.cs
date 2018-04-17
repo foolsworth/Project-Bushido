@@ -20,12 +20,17 @@ public class Gravity : MonoBehaviour {
                 GameObject armor = GameObject.FindGameObjectWithTag("local");
                 foreach (Transform child in armor.transform)
                 {
+                    if (child.name == "head" || child.name == "body" || child.name == "right" || child.name == "left")
+                    {
+                        
+                        child.GetComponent<Rigidbody>().isKinematic = false;
+                        child.GetComponent<Rigidbody>().useGravity = true;
+                        //child.GetComponent<Collider>().enabled = true;
+                        
+                    }
                     child.tag = "localArmorChild";
-                    child.GetComponent<Rigidbody>().isKinematic = false;
-                    child.GetComponent<Rigidbody>().useGravity = true;
-                    child.GetComponent<Collider>().enabled = true;
                     child.transform.parent = null;
-                    OurPlayerManager.dead = true;
+                    OurPlayerManager.dead = true; 
                 }
                 StartCoroutine(reset());
             }
@@ -43,13 +48,15 @@ public class Gravity : MonoBehaviour {
         GameObject[] children = GameObject.FindGameObjectsWithTag("localArmorChild");
         foreach (GameObject child in children)
         {
-
+        if (child.name == "head" || child.name == "body" || child.name == "right" || child.name == "left")
+        {
             child.GetComponent<Rigidbody>().isKinematic = true;
             child.GetComponent<Rigidbody>().useGravity = false;
-            if(child.name!="left"|| child.name != "right")
-            {
-                child.GetComponent<Collider>().enabled = false;
-            }
+        }
+        //    if(child.name!="left"|| child.name != "right")
+        //    {
+        //        child.GetComponent<Collider>().enabled = false;
+        //    }
            
             child.transform.parent = armor.transform;
             OurPlayerManager.dead = false;
