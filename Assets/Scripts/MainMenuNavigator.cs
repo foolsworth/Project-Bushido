@@ -9,7 +9,7 @@ public class MainMenuNavigator : MonoBehaviour {
     public SceneTransitionScript_v3 m_transitionController;
     bool m_selectionMade;
     public AsyncOperation m_LoadingNextScene;
-    public string m_NextSceneName = "Launcher";
+    public string m_NextSceneName = "Game";
 
     public GameObject Launcher;
 
@@ -61,11 +61,12 @@ public class MainMenuNavigator : MonoBehaviour {
         if (m_LoadingNextScene.isDone)
         {
             m_transitionController.PauseTransition(m_selectionMade);  //unpause if argument is true, selection made means we should unpause
+            Launcher.GetComponent<OurLauncher>().Connect();
         }
         if (m_transitionController.m_isDone)
         {
             m_LoadingNextScene.allowSceneActivation = true;
-            Launcher.GetComponent<OurLauncher>().Connect();
+            
         }
         /*
         if(m_LoadingNextScene.isDone && m_transitionController.m_isDone) {

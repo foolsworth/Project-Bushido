@@ -53,7 +53,7 @@ public class SceneTransitionScript_v3 : MonoBehaviour {
 
         m_tunnelParent.transform.position = Vector3.Lerp(m_source, m_destination, (m_accumulatedTime - m_waitTime) / m_animationDuration);
         
-        m_isDone = (Vector3.Distance(m_source, m_destination) <= 1.0e-4f);
+        m_isDone = (Vector3.Distance(m_tunnelParent.transform.position, m_destination) <= 1.0e-4f);
 
     }
 

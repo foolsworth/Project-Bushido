@@ -225,7 +225,7 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: beccd42234ec9e04eb5b2ed2752b2ed9, type: 2}
   m_IsPrefabParent: 0
---- !u!43 &893548688
+--- !u!43 &537534174
 Mesh:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -396,7 +396,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!21 &1505864976
+--- !u!1 &1527456472 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1865708304373794, guid: beccd42234ec9e04eb5b2ed2752b2ed9,
+    type: 2}
+  m_PrefabInternal: {fileID: 534044715}
+--- !u!21 &1587677784
 Material:
   serializedVersion: 6
   m_ObjectHideFlags: 0
@@ -429,11 +434,6 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
---- !u!1 &1527456472 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1865708304373794, guid: beccd42234ec9e04eb5b2ed2752b2ed9,
-    type: 2}
-  m_PrefabInternal: {fileID: 534044715}
 --- !u!1001 &1898883794
 Prefab:
   m_ObjectHideFlags: 0
@@ -493,6 +493,11 @@ Prefab:
       propertyPath: m_animationDuration
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114202253804986968, guid: 56f3359fc22ea83449fab70e99d9923c,
+        type: 2}
+      propertyPath: Launcher
+      value: 
+      objectReference: {fileID: 976935157}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 56f3359fc22ea83449fab70e99d9923c, type: 2}
   m_IsPrefabParent: 0
@@ -539,17 +544,22 @@ Prefab:
         type: 2}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 893548688}
+      objectReference: {fileID: 537534174}
     - target: {fileID: 23369664759296636, guid: 9a13357a4e33c964d9ba90b0cbd6cb03,
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 1505864976}
+      objectReference: {fileID: 1587677784}
     - target: {fileID: 114366428462352712, guid: 9a13357a4e33c964d9ba90b0cbd6cb03,
         type: 2}
       propertyPath: Launcher
       value: 
       objectReference: {fileID: 976935157}
+    - target: {fileID: 114366428462352712, guid: 9a13357a4e33c964d9ba90b0cbd6cb03,
+        type: 2}
+      propertyPath: m_NextSceneName
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a13357a4e33c964d9ba90b0cbd6cb03, type: 2}
   m_IsPrefabParent: 0
