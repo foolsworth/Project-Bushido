@@ -16,8 +16,10 @@ public class SceneTransitionScript_v3 : MonoBehaviour {
     public float m_animationDuration = 5.0f;
     public bool m_isDone { get; private set; }
 
-
+    //doesn't change after being set
     private Vector3 m_source;
+
+    //changes on fixedUpdate
     private Vector3 m_destination;
 
     private void Awake() {
@@ -48,12 +50,13 @@ public class SceneTransitionScript_v3 : MonoBehaviour {
     private void FixedUpdate() {
         if(m_doesAccumulate)
             m_accumulatedTime += Time.fixedDeltaTime;
-        Debug.Log(m_accumulatedTime);
+        //Debug.Log(m_accumulatedTime);
         m_destination = m_player.transform.position;
 
         m_tunnelParent.transform.position = Vector3.Lerp(m_source, m_destination, (m_accumulatedTime - m_waitTime) / m_animationDuration);
         
-        m_isDone = (Vector3.Distance(m_tunnelParent.transform.position, m_destination) <= 1.0e-4f);
+        //This had been wrong, we were testing m_source, which doesn't change, with m_destination, which doesn't change much.  This iteration tests the correct things.
+        m_isDone = (Vector3.Distance(m_tunnelParent.transform.position, m_destination) <= 1.0e-4f); //This number could probably be larger, but it isn't usually the source of the problems.  Make it bigger if you're debugging.
 
     }
 
