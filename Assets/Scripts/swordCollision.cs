@@ -22,7 +22,9 @@ public class swordCollision : MonoBehaviour {
             dir = -dir.normalized;
             // And finally we add force in the direction of dir and multiply it by force. 
             // This will push back the player
-            GetComponent<Rigidbody>().AddForce(dir * force);
+            //GetComponent<Rigidbody>().AddForce(dir * force);
+            GetComponent<Rigidbody>().AddForceAtPosition(dir * force, c.contacts[0].point);
+            GetComponent<Rigidbody>().drag = 1000;
 
         }
         //if (collision.collider.gameObject.layer == 13)
@@ -36,8 +38,15 @@ public class swordCollision : MonoBehaviour {
         //}
     }
 
-    // Use this for initialization
-    void Start () {
+
+    private void OnCollisionExit(Collision c)
+    {
+
+        GetComponent<Rigidbody>().drag = 10 ;
+
+    }
+        // Use this for initialization
+        void Start () {
     
 	}
 	
