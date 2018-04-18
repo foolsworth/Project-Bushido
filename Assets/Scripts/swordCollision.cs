@@ -5,6 +5,7 @@ using UnityEngine;
 public class swordCollision : MonoBehaviour {
 
     public AudioSource swordhit;
+    public GameObject rightH;
 
     private void OnCollisionEnter(Collision c)
     {
@@ -24,7 +25,7 @@ public class swordCollision : MonoBehaviour {
             // This will push back the player
             //GetComponent<Rigidbody>().AddForce(dir * force);
             GetComponent<Rigidbody>().AddForceAtPosition(dir * force, c.contacts[0].point);
-            GetComponent<SpringJoint>().spring = 10;
+            rightH.GetComponent<SpringJoint>().spring = 10;
             //GetComponent<Rigidbody>().drag = 100;
 
         }

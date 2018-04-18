@@ -4046,8 +4046,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114512920962553434}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 4
-  instantiationId: 4
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114177188099648120
@@ -4240,8 +4240,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114193140661599750}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 1
-  instantiationId: 1
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114316386535061206
@@ -4267,6 +4267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordhit: {fileID: 82198308969865146}
+  rightH: {fileID: 0}
 --- !u!114 &114407717604987760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4435,6 +4436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordhit: {fileID: 82198308969865146}
+  rightH: {fileID: 1191974288808064}
 --- !u!114 &114585420717320412
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4482,8 +4484,8 @@ MonoBehaviour:
   - {fileID: 114712086998628358}
   - {fileID: 114558999319489220}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 2
-  instantiationId: 2
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!114 &114607730704255874
@@ -4498,6 +4500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   swordhit: {fileID: 82634507831518074}
+  rightH: {fileID: 0}
 --- !u!114 &114712086998628358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4638,8 +4641,8 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 114234145511473172}
   ObservedComponentsFoldoutOpen: 1
-  viewIdField: 3
-  instantiationId: 3
+  viewIdField: 0
+  instantiationId: -1
   currentMasterID: -1
   isRuntimeInstantiated: 0
 --- !u!135 &135644389923784518
