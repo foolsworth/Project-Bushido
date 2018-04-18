@@ -27,8 +27,8 @@ public class swordCollision : MonoBehaviour {
             GetComponent<Rigidbody>().AddForceAtPosition(dir * force, c.contacts[0].point);
             rightH.GetComponent<SpringJoint>().spring = 0;
             rightH.GetComponent<SpringJoint>().damper = 0;
-            rightH.GetComponent<SpringJoint>().tolerance = 1e20F;
-            rightH.GetComponent<SpringJoint>().maxDistance = 1e20F;
+            rightH.GetComponent<SpringJoint>().tolerance = 9e20F;
+            rightH.GetComponent<SpringJoint>().maxDistance = 9e20F;
 
 
             //GetComponent<Rigidbody>().drag = 100;
