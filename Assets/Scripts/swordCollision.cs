@@ -50,7 +50,7 @@ public class swordCollision : MonoBehaviour {
         {
             rightH.GetComponent<SpringJoint>().spring = 1000;
             rightH.GetComponent<SpringJoint>().damper = 20;
-            rightH.GetComponent<SpringJoint>().tolerance = 1e-20;
+            rightH.GetComponent<SpringJoint>().tolerance = 1e-20F;
         }
         //GetComponent<Rigidbody>().drag = 10 ;
 
