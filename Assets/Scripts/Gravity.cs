@@ -64,5 +64,6 @@ public class Gravity : MonoBehaviour {
 
         armor.transform.position = gameObject.transform.position;
         armor.transform.rotation = gameObject.transform.rotation;
+        GameObject.Find("HeightChecker").transform.position = gameObject.transform.position;
     }
 }

@@ -58,13 +58,16 @@ public class MainMenuNavigator : MonoBehaviour {
     }
 
     private void Update() {
+        if (m_LoadingNextScene != null) { 
         if (m_LoadingNextScene.isDone)
         {
             m_transitionController.PauseTransition(m_selectionMade);  //unpause if argument is true, selection made means we should unpause
-            Launcher.GetComponent<OurLauncher>().Connect();
-        }
+            //Launcher.GetComponent<OurLauncher>().Connect();
+        } }
         if (m_transitionController.m_isDone)
         {
+            //m_LoadingNextScene = SceneManager.LoadSceneAsync(m_NextSceneName, LoadSceneMode.Additive);
+            Launcher.GetComponent<OurLauncher>().Connect();
             m_LoadingNextScene.allowSceneActivation = true;
             
         }
