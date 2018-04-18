@@ -59,6 +59,7 @@ public class grabsword : MonoBehaviour {
                 closedGHand.SetActive(true);
                 openGHand.SetActive(false);
                 unsheath.Play();
+                gameObject.GetComponent<swordCollision>().enabled = true;
             }
 
 
