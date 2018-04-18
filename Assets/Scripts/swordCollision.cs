@@ -48,13 +48,11 @@ public class swordCollision : MonoBehaviour {
 
     private void OnCollisionExit(Collision c)
     {
-        if (c.collider.gameObject.layer == 10)
-        {
+
             rightH.GetComponent<SpringJoint>().spring = 1000;
             rightH.GetComponent<SpringJoint>().damper = 20;
             rightH.GetComponent<SpringJoint>().tolerance = 1e-20F;
             rightH.GetComponent<SpringJoint>().maxDistance = 0;
-        }
         //GetComponent<Rigidbody>().drag = 10 ;
 
     }
