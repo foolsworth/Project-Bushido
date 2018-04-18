@@ -12,7 +12,7 @@ public class swordCollision : MonoBehaviour {
         {
             Vector3 myVel = transform.parent.GetComponent<Rigidbody>().velocity;
 
-            float force = 1000;
+            float force = 10;
             swordhit.Stop();
             swordhit.Play();
             //transform.parent.GetComponent<Rigidbody>().velocity += c.collider.gameObject.transform.parent.GetComponent<Rigidbody>().velocity;
@@ -24,6 +24,7 @@ public class swordCollision : MonoBehaviour {
             // This will push back the player
             //GetComponent<Rigidbody>().AddForce(dir * force);
             GetComponent<Rigidbody>().AddForceAtPosition(dir * force, c.contacts[0].point);
+            GetComponent<SpringJoint>().spring = 10;
             //GetComponent<Rigidbody>().drag = 100;
 
         }
@@ -41,7 +42,7 @@ public class swordCollision : MonoBehaviour {
 
     private void OnCollisionExit(Collision c)
     {
-
+        GetComponent<SpringJoint>().spring = 1000;
         //GetComponent<Rigidbody>().drag = 10 ;
 
     }
