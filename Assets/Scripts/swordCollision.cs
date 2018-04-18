@@ -12,7 +12,7 @@ public class swordCollision : MonoBehaviour {
         {
             Vector3 myVel = transform.parent.GetComponent<Rigidbody>().velocity;
 
-            float force = 100000000;
+            float force = 10000;
             swordhit.Stop();
             swordhit.Play();
             //transform.parent.GetComponent<Rigidbody>().velocity += c.collider.gameObject.transform.parent.GetComponent<Rigidbody>().velocity;
