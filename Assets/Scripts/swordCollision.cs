@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,8 +28,8 @@ public class swordCollision : MonoBehaviour {
             GetComponent<Rigidbody>().AddForceAtPosition(dir * force, c.contacts[0].point);
             rightH.GetComponent<SpringJoint>().spring = 0;
             rightH.GetComponent<SpringJoint>().damper = 0;
-            rightH.GetComponent<SpringJoint>().tolerance = 9e20F;
-            rightH.GetComponent<SpringJoint>().maxDistance = 9e20F;
+            rightH.GetComponent<SpringJoint>().tolerance = Mathf.Infinity;
+            rightH.GetComponent<SpringJoint>().maxDistance = Mathf.Infinity;
 
 
             //GetComponent<Rigidbody>().drag = 100;
