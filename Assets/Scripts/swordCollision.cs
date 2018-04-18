@@ -43,7 +43,7 @@ public class swordCollision : MonoBehaviour {
 
     private void OnCollisionExit(Collision c)
     {
-        GetComponent<SpringJoint>().spring = 1000;
+        rightH.GetComponent<SpringJoint>().spring = 1000;
         //GetComponent<Rigidbody>().drag = 10 ;
 
     }
