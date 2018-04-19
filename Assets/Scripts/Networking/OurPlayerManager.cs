@@ -114,15 +114,15 @@ public class OurPlayerManager : Photon.PunBehaviour, IPunObservable
         if (health > 0)
         {
             health -= damage;
-            if (gameObject.tag == "local")
-            {
-                GameObject.Find("me").GetComponent<Text>().text = "My health: " + health;
+            //if (gameObject.tag == "local")
+            //{
+            //    GameObject.Find("me").GetComponent<Text>().text = "My health: " + health;
 
-            }
-            else
-            {
-                GameObject.Find("you").GetComponent<Text>().text = "Your health: " + health;
-            }
+            //}
+            //else
+            //{
+            //    GameObject.Find("you").GetComponent<Text>().text = "Your health: " + health;
+            //}
         }
     }
 
