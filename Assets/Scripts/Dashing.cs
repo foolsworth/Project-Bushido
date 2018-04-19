@@ -91,7 +91,7 @@ public class Dashing : MonoBehaviour {
         if (kb && !kbreset)
         {
             dashing = true;
-            targetPosition = pos/10;
+            targetPosition += pos;
             
             //Controller.TriggerHapticPulse(100);
             kb = false;

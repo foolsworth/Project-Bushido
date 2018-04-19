@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HeadShot : MonoBehaviour {
 
-    public OurPlayerManager manager;
+    OurPlayerManager manager;
     bool collided = false;
 
     private void OnCollisionEnter(Collision c)
@@ -22,7 +22,7 @@ public class HeadShot : MonoBehaviour {
     }
             // Use this for initialization
             void Start () {
-		
+        manager = gameObject.transform.parent.GetComponent<OurPlayerManager>();
 	}
 	
 	// Update is called once per frame
