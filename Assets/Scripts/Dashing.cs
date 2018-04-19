@@ -172,6 +172,7 @@ public class Dashing : MonoBehaviour {
             if(kbreset )
             {
                 GhostTransform.position = physicalBodyTransform.position;
+
                 if(Vector3.Distance(PhysicalBodyRB.position, targetPosition) == 0)
                 {
                     kbreset = false;
