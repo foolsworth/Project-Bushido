@@ -62,7 +62,7 @@ public class Dashing : MonoBehaviour {
     public void Knockback(Vector3 pos)
     {
         kb = true;
-        pos = this.pos;
+        this.pos=pos;
     }
 
     // Update is called once per frame
