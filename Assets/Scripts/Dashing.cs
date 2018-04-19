@@ -88,12 +88,12 @@ public class Dashing : MonoBehaviour {
             }
         }
 
-        if (kb&& !kbreset)
+        if (kb && !kbreset)
         {
             dashing = true;
-            targetPosition = pos;
+            targetPosition = pos/10;
             
-            Controller.TriggerHapticPulse(100);
+            //Controller.TriggerHapticPulse(100);
             kb = false;
             kbreset = true;
         }
@@ -169,7 +169,7 @@ public class Dashing : MonoBehaviour {
             Debug.Log("Dats Dash YO!");
             PhysicalBodyRB.position =new Vector3( Mathf.Lerp(PhysicalBodyRB.position.x, targetPosition.x, Time.deltaTime * dashSpeed), PhysicalBodyRB.position.y, Mathf.Lerp(PhysicalBodyRB.position.z, targetPosition.z, Time.deltaTime * dashSpeed));
 
-            if(kbreset && Vector3.Distance(PhysicalBodyRB.position, targetPosition) < 1)
+            if(kbreset && Vector3.Distance(PhysicalBodyRB.position, targetPosition) < 5)
             {
                 PhysicalBodyRB.position = targetPosition;
                 kbreset = false;
