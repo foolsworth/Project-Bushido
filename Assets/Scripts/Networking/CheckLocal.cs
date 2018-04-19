@@ -28,6 +28,13 @@ public class CheckLocal : Photon.MonoBehaviour
             gameObject.transform.Find("headM").gameObject.layer = 13;
             gameObject.transform.Find("bodyM").gameObject.layer = 13;
             gameObject.transform.Find("bodyM").Find("Tsujigiri_Blade_Textured").gameObject.layer = 11;
+
+            Transform temp = gameObject.transform.Find("bodyM").Find("Tsujigiri_Blade_Textured").Find("swordCollider").transform;
+            foreach (Transform child  in temp)
+            {
+                child.gameObject.layer = 11;
+            }
+            
             gameObject.transform.Find("rightM").gameObject.layer = 13;
             gameObject.transform.Find("rightM").Find("Tsujigiri_FirstHero_HandGauntlet_RIGHT").gameObject.layer = 13;
             gameObject.transform.Find("leftM").gameObject.layer = 13;
