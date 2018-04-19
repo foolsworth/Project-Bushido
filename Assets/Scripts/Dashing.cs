@@ -10,6 +10,9 @@ public class Dashing : MonoBehaviour {
 
     public bool dashing = false;
 
+    public bool kb = false;
+    public Vector3 pos;
+
     private SteamVR_TrackedObject trackedObj;
 
      GameObject physicalBody;
@@ -55,6 +58,11 @@ public class Dashing : MonoBehaviour {
         trackedObj = GetComponent<SteamVR_TrackedObject>();
     }
 
+    public void Knockback(Vector3 pos)
+    {
+        kb = true;
+        pos = this.pos;
+    }
 
     // Update is called once per frame
     void Update () {
@@ -78,6 +86,14 @@ public class Dashing : MonoBehaviour {
                 instantiated = true;
             }
         }
+
+        if (kb)
+        {
+            dashing = true;
+            targetPosition = pos;
+            kb = false;
+        }
+
         if (Controller.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad) )
         {
             count = false;
