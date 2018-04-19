@@ -13,6 +13,7 @@ TagManager:
   - Menu_Proceed
   - Menu_Option0
   - Beam
+  - handE
   layers:
   - Default
   - TransparentFX

@@ -18,8 +18,9 @@ public class CheckLocal : Photon.MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!photonView.isMine&& !set)
+        if (!photonView.isMine && !set)
         {
+
             gameObject.transform.Find("head").GetComponent<lerpGhostHands>().enabled = false;
             gameObject.transform.Find("left").GetComponent<lerpGhostHands>().enabled = false;
             gameObject.transform.Find("right").GetComponent<lerpGhostHands>().enabled = false;
@@ -36,7 +37,6 @@ public class CheckLocal : Photon.MonoBehaviour
             }
             
             gameObject.transform.Find("rightM").gameObject.layer = 13;
-
             gameObject.transform.Find("rightM").gameObject.tag = "handE";
             gameObject.transform.Find("rightM").Find("Tsujigiri_FirstHero_HandGauntlet_RIGHT").gameObject.layer = 13;
             gameObject.transform.Find("leftM").gameObject.layer = 13;
