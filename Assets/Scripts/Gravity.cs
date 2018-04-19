@@ -22,7 +22,10 @@ public class Gravity : MonoBehaviour {
                 {
                     if (child.name == "head" || child.name == "body" || child.name == "right" || child.name == "left")
                     {
-                        
+                        if (child.name == "body")
+                        {
+
+                        }
                         child.GetComponent<Rigidbody>().isKinematic = false;
                         child.GetComponent<Rigidbody>().useGravity = true;
                         //child.GetComponent<Collider>().enabled = true;
