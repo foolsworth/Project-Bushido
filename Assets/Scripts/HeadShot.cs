@@ -8,7 +8,7 @@ public class HeadShot : MonoBehaviour {
 
     private void OnCollisionEnter(Collision c)
     {
-        if (c.collider.gameObject.layer == 10 && c.collider.transform.parent.parent.gameObject.layer == 11)
+        if (c.collider.gameObject.layer == 11)
         {
 
             manager.takeDamage(10);
