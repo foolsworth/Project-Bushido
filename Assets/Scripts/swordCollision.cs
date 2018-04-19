@@ -14,7 +14,7 @@ public class swordCollision : MonoBehaviour {
         {
             Vector3 myVel = transform.parent.GetComponent<Rigidbody>().velocity;
 
-            float force = 100;
+            float force = 10;
             swordhit.Stop();
             swordhit.Play();
             //transform.parent.GetComponent<Rigidbody>().velocity += c.collider.gameObject.transform.parent.GetComponent<Rigidbody>().velocity;
@@ -27,7 +27,7 @@ public class swordCollision : MonoBehaviour {
             //GetComponent<Rigidbody>().AddForce(dir * force);
             GetComponent<Rigidbody>().AddForceAtPosition(dir * force, c.contacts[0].point);
             rightH.GetComponent<SpringJoint>().spring = 0;
-            rightH.GetComponent<SpringJoint>().damper = Mathf.Infinity;
+            rightH.GetComponent<SpringJoint>().damper = 0;
             rightH.GetComponent<SpringJoint>().tolerance = Mathf.Infinity;
             rightH.GetComponent<SpringJoint>().maxDistance = Mathf.Infinity;
 
