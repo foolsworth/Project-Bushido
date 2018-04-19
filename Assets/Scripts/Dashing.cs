@@ -91,9 +91,9 @@ public class Dashing : MonoBehaviour {
         if (kb && !kbreset)
         {
             dashing = true;
-            targetPosition += pos;
+            targetPosition -= pos;
             
-            //Controller.TriggerHapticPulse(100);
+            Controller.TriggerHapticPulse(100);
             kb = false;
             kbreset = true;
         }
@@ -171,7 +171,7 @@ public class Dashing : MonoBehaviour {
 
             if(kbreset && Vector3.Distance(PhysicalBodyRB.position, targetPosition) < 5)
             {
-                PhysicalBodyRB.position = targetPosition;
+                GhostTransform.position = targetPosition;
                 kbreset = false;
             }
             //if(PhysicalBodyRB.position.magnitude > targetPosition.magnitude-0.5 && PhysicalBodyRB.position.magnitude < targetPosition.magnitude + 1)
