@@ -11,7 +11,7 @@ public class HeadShot : MonoBehaviour {
     {
         if (c.collider.gameObject.layer == 11 && !collided)
         {
-
+            collided = true;
             manager.takeDamage(10);
             Vector3 dir = c.collider.gameObject.transform.parent.parent.transform.position - transform.position;
             // We then get the opposite (-Vector3) and normalize it
@@ -20,8 +20,13 @@ public class HeadShot : MonoBehaviour {
 
         }
     }
-            // Use this for initialization
-            void Start () {
+    private void OnCollisionExit(Collision c)
+    {
+        collided = false;
+    }
+    
+        // Use this for initialization
+        void Start () {
         manager = gameObject.transform.parent.GetComponent<OurPlayerManager>();
 	}
 	
