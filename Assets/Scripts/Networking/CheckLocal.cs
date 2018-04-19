@@ -38,6 +38,7 @@ public class CheckLocal : Photon.MonoBehaviour
             
             gameObject.transform.Find("rightM").gameObject.layer = 13;
             gameObject.transform.Find("rightM").gameObject.tag = "handE";
+
             gameObject.transform.Find("rightM").Find("Tsujigiri_FirstHero_HandGauntlet_RIGHT").gameObject.layer = 13;
             gameObject.transform.Find("leftM").gameObject.layer = 13;
             gameObject.transform.Find("leftM").Find("Tsujigiri_FirstHero_HandGauntlet_LEFT").gameObject.layer = 13;
