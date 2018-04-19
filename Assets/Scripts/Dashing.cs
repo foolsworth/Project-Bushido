@@ -11,6 +11,7 @@ public class Dashing : MonoBehaviour {
     public bool dashing = false;
 
     public bool kb = false;
+    public bool kbreset = false;
     public Vector3 pos;
 
     private SteamVR_TrackedObject trackedObj;
@@ -87,11 +88,14 @@ public class Dashing : MonoBehaviour {
             }
         }
 
-        if (kb)
+        if (kb&& !kbreset)
         {
             dashing = true;
             targetPosition = pos;
+            
+            Controller.TriggerHapticPulse(100);
             kb = false;
+            kbreset = true;
         }
 
         if (Controller.GetPressDown(SteamVR_Controller.ButtonMask.Touchpad) )
@@ -165,6 +169,11 @@ public class Dashing : MonoBehaviour {
             Debug.Log("Dats Dash YO!");
             PhysicalBodyRB.position =new Vector3( Mathf.Lerp(PhysicalBodyRB.position.x, targetPosition.x, Time.deltaTime * dashSpeed), PhysicalBodyRB.position.y, Mathf.Lerp(PhysicalBodyRB.position.z, targetPosition.z, Time.deltaTime * dashSpeed));
 
+            if(kbreset && Vector3.Distance(PhysicalBodyRB.position, targetPosition) < 1)
+            {
+                PhysicalBodyRB.position = targetPosition;
+                kbreset = false;
+            }
             //if(PhysicalBodyRB.position.magnitude > targetPosition.magnitude-0.5 && PhysicalBodyRB.position.magnitude < targetPosition.magnitude + 1)
             //{
 

@@ -16,7 +16,7 @@ public class HeadShot : MonoBehaviour {
             Vector3 dir = c.contacts[0].point - transform.position;
             // We then get the opposite (-Vector3) and normalize it
             dir = -dir.normalized;
-            GameObject.Find("GhostBody").transform.Find("Controller (left)").GetComponent<Dashing>().Knockback(dir*10);
+            GameObject.Find("GhostBody").transform.Find("Controller (left)").GetComponent<Dashing>().Knockback(dir*1);
 
         }
     }
