@@ -3,12 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class HeadShot : MonoBehaviour {
+
+    public OurPlayerManager manager;
+
     private void OnCollisionEnter(Collision c)
     {
-        if (c.collider.gameObject.layer == 10)
+        if (c.collider.gameObject.layer == 11)
         {
 
-
+            manager.takeDamage(10);
 
         }
     }
