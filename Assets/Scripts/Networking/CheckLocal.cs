@@ -27,6 +27,8 @@ public class CheckLocal : Photon.MonoBehaviour
             //gameObject.transform.Find("right").GetComponent<grabsword>().enabled = false;
 
             gameObject.transform.Find("headM").gameObject.layer = 13;
+            gameObject.transform.Find("headM").gameObject.GetComponent<HeadShot>().enabled = false;
+            gameObject.transform.Find("bodyM").gameObject.GetComponent<HeadShot>().enabled = false;
             gameObject.transform.Find("bodyM").gameObject.layer = 13;
             gameObject.transform.Find("bodyM").Find("Tsujigiri_Blade_Textured").gameObject.layer = 11;
             gameObject.transform.Find("bodyM").Find("Tsujigiri_Blade_Textured").Find("swordCollider").gameObject.layer = 11;

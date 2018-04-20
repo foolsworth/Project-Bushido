@@ -51,12 +51,12 @@ namespace ExitGames.Demos.DemoAnimator
 			Instance = this;
 
 			// in case we started this demo with the wrong scene being active, simply load the menu scene
-			if (!PhotonNetwork.connected)
-			{
-				SceneManager.LoadScene("PunBasics-Launcher");
+			//if (!PhotonNetwork.connected)
+			//{
+			//	SceneManager.LoadScene("Launcher");
 
-				return;
-			}
+			//	return;
+			//}
 
 			if (playerPrefab == null) { // #Tip Never assume public properties of Components are filled up properly, always check and inform the developer of it.
 				

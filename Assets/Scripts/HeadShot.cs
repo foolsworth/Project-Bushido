@@ -33,7 +33,7 @@ public class HeadShot : MonoBehaviour {
     
         // Use this for initialization
         void Start () {
-        manager = gameObject.transform.parent.GetComponent<OurPlayerManager>();
+        manager = GameObject.FindGameObjectWithTag("local").GetComponent<OurPlayerManager>();
 	}
 
     void Update()

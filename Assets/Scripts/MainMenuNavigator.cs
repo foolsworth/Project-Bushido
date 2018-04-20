@@ -68,8 +68,10 @@ public class MainMenuNavigator : MonoBehaviour {
         if (m_transitionController.m_isDone)
         {
             //m_LoadingNextScene = SceneManager.LoadSceneAsync(m_NextSceneName, LoadSceneMode.Additive);
-            Launcher.GetComponent<OurLauncher>().Connect();
-            m_LoadingNextScene.allowSceneActivation = true;
+            //Launcher.GetComponent<OurLauncher>().Connect();
+            //m_LoadingNextScene.allowSceneActivation = true;
+            //Launcher.SetActive(true);
+            SceneManager.LoadScene("testing launcher", LoadSceneMode.Single);
             
         }
         /*
