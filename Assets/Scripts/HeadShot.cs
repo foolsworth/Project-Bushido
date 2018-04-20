@@ -78,6 +78,12 @@ public class HeadShot : MonoBehaviour {
 
             rend.material.SetFloat("_Factor", 3- (3*(manager.health/100)));
         }
+        else if (manager.health > 100)
+        {
+            rend.material.shader = Shader.Find("Unlit/CameraBlurr");
+
+            rend.material.SetFloat("_Factor", 0);
+        }
     }
 
     IEnumerator reset()
