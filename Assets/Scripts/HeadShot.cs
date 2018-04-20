@@ -73,10 +73,7 @@ public class HeadShot : MonoBehaviour {
     IEnumerator reset()
     {
         yield return new WaitForSeconds(3);
-
-        gameObject.transform.position = spawnPoint1.transform.position;
-        gameObject.transform.rotation = spawnPoint1.transform.rotation;
-
+        spawnPoint1 = GameObject.Find("spawnInArena");
         GameObject armor = GameObject.FindGameObjectWithTag("local");
         GameObject[] children = GameObject.FindGameObjectsWithTag("localArmorChild");
         foreach (GameObject child in children)
@@ -105,5 +102,6 @@ public class HeadShot : MonoBehaviour {
         GameObject.Find("HeightChecker").transform.rotation = spawnPoint1.transform.rotation;
         GameObject.Find("GhostBody").transform.position = armor.transform.position;
         GameObject.Find("GhostBody").transform.rotation = armor.transform.rotation;
+        manager.health = 100;
     }
 }
