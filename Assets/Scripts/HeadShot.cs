@@ -33,7 +33,7 @@ public class HeadShot : MonoBehaviour {
             me.GetComponent<AudioSource>().Stop();
             me.GetComponent<AudioSource>().clip = sfx;
             me.GetComponent<AudioSource>().Play();
-            SteamVR_Controller.Input(2).TriggerHapticPulse(500);
+            SteamVR_Controller.Input(1).TriggerHapticPulse(1000);
         }
     }
     private void OnCollisionExit(Collision c)
