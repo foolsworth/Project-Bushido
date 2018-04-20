@@ -4,12 +4,7 @@ using UnityEngine;
 
 public class Gravity : MonoBehaviour {
     public GameObject spawnPoint1;
-    OurPlayerManager manager;
-    // Use this for initialization
-    void Start () {
-        manager = GameObject.FindGameObjectWithTag("local").GetComponent<OurPlayerManager>();
-    }
-	
+
 	// Update is called once per frame
 	void Update () {
         RaycastHit hit;
@@ -75,6 +70,6 @@ public class Gravity : MonoBehaviour {
         GameObject.Find("HeightChecker").transform.rotation = spawnPoint1.transform.rotation;
         GameObject.Find("GhostBody").transform.position = armor.transform.position;
         GameObject.Find("GhostBody").transform.rotation = armor.transform.rotation;
-        manager.health = 500;
+        GameObject.FindGameObjectWithTag("local").GetComponent<OurPlayerManager>().health = 500;
     }
 }
