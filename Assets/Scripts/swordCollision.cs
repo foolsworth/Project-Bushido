@@ -17,7 +17,8 @@ public class swordCollision : MonoBehaviour {
             float force = 10;
             swordhit.Stop();
             swordhit.Play();
-            SteamVR_Controller.Input(1).TriggerHapticPulse(1000);
+            SteamVR_Controller.Input(1).TriggerHapticPulse(2000);
+            SteamVR_Controller.Input(2).TriggerHapticPulse(2000);
             //transform.parent.GetComponent<Rigidbody>().velocity += c.collider.gameObject.transform.parent.GetComponent<Rigidbody>().velocity;
             // Calculate Angle Between the collision point and the player
             Vector3 dir = c.contacts[0].point - transform.position;
