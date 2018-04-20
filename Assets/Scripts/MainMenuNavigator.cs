@@ -13,6 +13,8 @@ public class MainMenuNavigator : MonoBehaviour {
 
     public GameObject Launcher;
 
+    public GameObject otherFire;
+
     private void Awake() {
         Debug.Log("Menu awake ...");
     }
@@ -59,6 +61,12 @@ public class MainMenuNavigator : MonoBehaviour {
     }
 
     private void Update() {
+        if(m_selectionMade)
+        {
+            //GameObject otherFire = GameObject.Find("TinyFire_Poison");
+            otherFire.SetActive(true);
+        }
+
         if (m_LoadingNextScene != null) { 
         if (m_LoadingNextScene.isDone)
         {
