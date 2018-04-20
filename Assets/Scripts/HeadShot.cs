@@ -11,6 +11,14 @@ public class HeadShot : MonoBehaviour {
     public AudioClip sfx;
     public GameObject me;
     GameObject spawnPoint1;
+    Renderer rend;
+
+    void Start()
+    {
+        rend = GameObject.Find("Blur").GetComponent<Renderer>();
+        manager = GameObject.FindGameObjectWithTag("local").GetComponent<OurPlayerManager>();
+        spawnPoint1 = GameObject.FindGameObjectWithTag("spawnInArena");
+    }
 
     private void OnCollisionEnter(Collision c)
     {
@@ -32,12 +40,6 @@ public class HeadShot : MonoBehaviour {
         collided = false;
     }
     
-        // Use this for initialization
-        void Start () {
-        manager = GameObject.FindGameObjectWithTag("local").GetComponent<OurPlayerManager>();
-        spawnPoint1 = GameObject.FindGameObjectWithTag("spawnInArena");
-
-    }
 
         void Update()
     {
@@ -70,9 +72,10 @@ public class HeadShot : MonoBehaviour {
 
         if (manager.health <= 100)
         {
+           
+            rend.material.shader = Shader.Find("Unlit/CameraBlurr");
 
-
-            GameObject.Find("Blur").GetComponent<Renderer>().material.SetFloat("Factor", 3- (3*(manager.health/100)));
+            rend.material.SetFloat("_Factor", 3- (3*(manager.health/100)));
         }
     }
 
