@@ -42,10 +42,11 @@ public class MainMenuNavigator : MonoBehaviour {
             m_selectionMade = true;
 
             //Check if the scene has loaded
-            if (m_LoadingNextScene.isDone) {
+            /**/if (m_LoadingNextScene.isDone) {/*/
                 //unpause the transition
+                m_transitionController.PauseTransition(true);/*/
                 m_transitionController.PauseTransition(true);
-            }
+            }/**/
         }
         if(p_collider.transform.CompareTag("Menu_Option0")) {
             //do the options thing
