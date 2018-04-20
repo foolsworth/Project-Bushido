@@ -46,9 +46,6 @@ public class Gravity : MonoBehaviour {
     {
         yield return new WaitForSeconds(3);
 
-        gameObject.transform.position = spawnPoint1.transform.position;
-        gameObject.transform.rotation = spawnPoint1.transform.rotation;
-
         GameObject armor = GameObject.FindGameObjectWithTag("local");
         GameObject[] children = GameObject.FindGameObjectsWithTag("localArmorChild");
         foreach (GameObject child in children)
@@ -74,6 +71,7 @@ public class Gravity : MonoBehaviour {
         armor.transform.position = spawnPoint1.transform.position;
         armor.transform.rotation = spawnPoint1.transform.rotation;
         GameObject.Find("HeightChecker").transform.position = spawnPoint1.transform.position;
+        GameObject.Find("HeightChecker").transform.rotation = spawnPoint1.transform.rotation;
         GameObject.Find("GhostBody").transform.position = armor.transform.position;
         GameObject.Find("GhostBody").transform.rotation = armor.transform.rotation;
     }

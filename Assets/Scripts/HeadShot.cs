@@ -102,6 +102,7 @@ public class HeadShot : MonoBehaviour {
         armor.transform.position = spawnPoint1.transform.position;
         armor.transform.rotation = spawnPoint1.transform.rotation;
         GameObject.Find("HeightChecker").transform.position = spawnPoint1.transform.position;
+        GameObject.Find("HeightChecker").transform.rotation = spawnPoint1.transform.rotation;
         GameObject.Find("GhostBody").transform.position = armor.transform.position;
         GameObject.Find("GhostBody").transform.rotation = armor.transform.rotation;
     }
