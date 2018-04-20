@@ -53,7 +53,7 @@ public class SceneTransitionScript_v3 : MonoBehaviour {
         //Debug.Log(m_accumulatedTime);
         m_destination = m_player.transform.position;
 
-        m_tunnelParent.transform.position = m_isDone? Vector3.Lerp(m_source, m_destination, (m_accumulatedTime - m_waitTime) / m_animationDuration) : m_destination;
+        m_tunnelParent.transform.position = (!m_isDone)? Vector3.Lerp(m_source, m_destination, (m_accumulatedTime - m_waitTime) / m_animationDuration) : m_destination;
         
         //This had been wrong, we were testing m_source, which doesn't change, with m_destination, which doesn't change much.  This iteration tests the correct things.
         m_isDone = (Vector3.Distance(m_tunnelParent.transform.position, m_destination) <= 1.0e-4f); //This number could probably be larger, but it isn't usually the source of the problems.  Make it bigger if you're debugging.
