@@ -169,7 +169,7 @@ public class Dashing : MonoBehaviour {
             Debug.Log("Dats Dash YO!");
             PhysicalBodyRB.position =new Vector3( Mathf.Lerp(PhysicalBodyRB.position.x, targetPosition.x, Time.deltaTime * dashSpeed), PhysicalBodyRB.position.y, Mathf.Lerp(PhysicalBodyRB.position.z, targetPosition.z, Time.deltaTime * dashSpeed));
 
-            if(kbreset && Vector3.Distance(PhysicalBodyRB.position, targetPosition) == 0)
+            if(kbreset && Vector3.Distance(PhysicalBodyRB.position, targetPosition) <= 0.1)
             {
                 GhostTransform.position = physicalBodyTransform.position;
                 kbreset = false;
