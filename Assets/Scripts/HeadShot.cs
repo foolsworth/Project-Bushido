@@ -7,17 +7,22 @@ public class HeadShot : MonoBehaviour {
     OurPlayerManager manager;
     bool collided = false;
 
+    public int damage;
+    public AudioClip sfx;
+    public GameObject me;
+
     private void OnCollisionEnter(Collision c)
     {
         if (c.collider.gameObject.layer == 11 && !collided)
         {
             collided = true;
-            manager.takeDamage(10);
-            Vector3 dir = GameObject.FindGameObjectWithTag("handE").transform.position - GameObject.FindGameObjectWithTag("local").transform.Find("headM").transform.position;
+            manager.takeDamage(damage);
+            Vector3 dir = GameObject.FindGameObjectWithTag("handE").transform.position - me.transform.position;
             // We then get the opposite (-Vector3) and normalize it
             dir = -dir.normalized;
             GameObject.Find("GhostBody").transform.Find("Controller (left)").GetComponent<Dashing>().Knockback(dir);
-
+            me.GetComponent<AudioSource>().clip = sfx;
+            me.GetComponent<AudioSource>().Play();
         }
     }
     private void OnCollisionExit(Collision c)
