@@ -17,10 +17,11 @@ public class HeadShot : MonoBehaviour {
         {
             collided = true;
             manager.takeDamage(damage);
-            Vector3 dir = GameObject.FindGameObjectWithTag("handE").transform.position - me.transform.position;
+            //Vector3 dir = GameObject.FindGameObjectWithTag("handE").transform.position - me.transform.position;
             // We then get the opposite (-Vector3) and normalize it
-            dir = -dir.normalized;
-            GameObject.Find("GhostBody").transform.Find("Controller (left)").GetComponent<Dashing>().Knockback(dir);
+            // dir = -dir.normalized;
+            // GameObject.Find("GhostBody").transform.Find("Controller (left)").GetComponent<Dashing>().Knockback(dir);
+            me.GetComponent<AudioSource>().Stop();
             me.GetComponent<AudioSource>().clip = sfx;
             me.GetComponent<AudioSource>().Play();
         }
