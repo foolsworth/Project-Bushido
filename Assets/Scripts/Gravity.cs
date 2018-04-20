@@ -12,8 +12,9 @@ public class Gravity : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         RaycastHit hit;
-        Debug.DrawRay(transform.position + new Vector3(0, 10, 0), Vector3.down, Color.green);
-        if (Physics.Raycast(transform.position+new Vector3(0,10,0), Vector3.down, out hit))
+       LayerMask mask = 1 << LayerMask.NameToLayer("Default");
+        // Debug.DrawRay(transform.position + new Vector3(0, 10, 0), Vector3.down, Color.green);
+        if (Physics.Raycast(transform.position + new Vector3(0, 10, 0), Vector3.down, out hit,1000 , mask))
         {
             if (hit.transform.tag=="dangerNet" && GameObject.FindGameObjectWithTag("local") != null)
             {
@@ -44,6 +45,7 @@ public class Gravity : MonoBehaviour {
     IEnumerator reset()
     {
         yield return new WaitForSeconds(3);
+
         gameObject.transform.position = spawnPoint1.transform.position;
         gameObject.transform.rotation = spawnPoint1.transform.rotation;
 
@@ -69,8 +71,10 @@ public class Gravity : MonoBehaviour {
             OurPlayerManager.dead = false;
         }
 
-        armor.transform.position = gameObject.transform.position;
-        armor.transform.rotation = gameObject.transform.rotation;
-        GameObject.Find("HeightChecker").transform.position = gameObject.transform.position;
+        armor.transform.position = spawnPoint1.transform.position;
+        armor.transform.rotation = spawnPoint1.transform.rotation;
+        GameObject.Find("HeightChecker").transform.position = spawnPoint1.transform.position;
+        GameObject.Find("GhostBody").transform.position = armor.transform.position;
+        GameObject.Find("GhostBody").transform.rotation = armor.transform.rotation;
     }
 }
