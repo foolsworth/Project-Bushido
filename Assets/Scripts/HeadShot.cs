@@ -33,6 +33,7 @@ public class HeadShot : MonoBehaviour {
             me.GetComponent<AudioSource>().Stop();
             me.GetComponent<AudioSource>().clip = sfx;
             me.GetComponent<AudioSource>().Play();
+            SteamVR_Controller.Input(SteamVR_Controller.GetDeviceIndex(SteamVR_Controller.DeviceRelation.Rightmost)).TriggerHapticPulse(500);
         }
     }
     private void OnCollisionExit(Collision c)
@@ -111,6 +112,6 @@ public class HeadShot : MonoBehaviour {
         GameObject.Find("HeightChecker").transform.rotation = spawnPoint1.transform.rotation;
         GameObject.Find("GhostBody").transform.position = armor.transform.position;
         GameObject.Find("GhostBody").transform.rotation = armor.transform.rotation;
-        manager.health = 100;
+        manager.health = 500;
     }
 }

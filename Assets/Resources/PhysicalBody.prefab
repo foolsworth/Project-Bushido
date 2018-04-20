@@ -4601,7 +4601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   checking: 0
   unsheathed: 0
-  health: 100
+  health: 500
 --- !u!114 &114578430125978004
 MonoBehaviour:
   m_ObjectHideFlags: 1
