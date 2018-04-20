@@ -24,7 +24,7 @@ public class Gravity : MonoBehaviour {
                     {
                         if (child.name == "body")
                         {
-
+                            child.GetComponent<lerpBody>().enabled = false;
                         }
                         child.GetComponent<Rigidbody>().isKinematic = false;
                         child.GetComponent<Rigidbody>().useGravity = true;
@@ -53,7 +53,11 @@ public class Gravity : MonoBehaviour {
         {
         if (child.name == "head" || child.name == "body" || child.name == "right" || child.name == "left")
         {
-            child.GetComponent<Rigidbody>().isKinematic = true;
+                if (child.name == "body")
+                {
+                    child.GetComponent<lerpBody>().enabled = true;
+                }
+                child.GetComponent<Rigidbody>().isKinematic = true;
             child.GetComponent<Rigidbody>().useGravity = false;
         }
         //    if(child.name!="left"|| child.name != "right")

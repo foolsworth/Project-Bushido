@@ -34,9 +34,67 @@ public class HeadShot : MonoBehaviour {
         void Start () {
         manager = gameObject.transform.parent.GetComponent<OurPlayerManager>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
+    void Update()
+    {
+        if (manager.health==0)
+        {
+                GameObject armor = GameObject.FindGameObjectWithTag("local");
+                foreach (Transform child in armor.transform)
+                {
+                    if (child.name == "head" || child.name == "body" || child.name == "right" || child.name == "left")
+                    {
+                        if (child.name == "body")
+                        {
+                            child.GetComponent<lerpBody>().enabled = false;
+                        }
+                        child.GetComponent<Rigidbody>().isKinematic = false;
+                        child.GetComponent<Rigidbody>().useGravity = true;
+                        //child.GetComponent<Collider>().enabled = true;
+
+                    }
+                    child.tag = "localArmorChild";
+                    child.transform.parent = null;
+                    OurPlayerManager.dead = true;
+                child.gameObject.AddComponent<Sliceable>();
+
+                }
+                StartCoroutine(reset());
+            
+        }
+
+    }
+
+    IEnumerator reset()
+    {
+        yield return new WaitForSeconds(3);
+        gameObject.transform.position = Vector3.zero;
+        gameObject.transform.rotation = Quaternion.identity;
+
+        GameObject armor = GameObject.FindGameObjectWithTag("local");
+        GameObject[] children = GameObject.FindGameObjectsWithTag("localArmorChild");
+        foreach (GameObject child in children)
+        {
+            if (child.name == "head" || child.name == "body" || child.name == "right" || child.name == "left")
+            {
+                if (child.name == "body")
+                {
+                    child.GetComponent<lerpBody>().enabled = true;
+                }
+                child.GetComponent<Rigidbody>().isKinematic = true;
+                child.GetComponent<Rigidbody>().useGravity = false;
+            }
+            //    if(child.name!="left"|| child.name != "right")
+            //    {
+            //        child.GetComponent<Collider>().enabled = false;
+            //    }
+
+            child.transform.parent = armor.transform;
+            OurPlayerManager.dead = false;
+        }
+
+        armor.transform.position = gameObject.transform.position;
+        armor.transform.rotation = gameObject.transform.rotation;
+        GameObject.Find("HeightChecker").transform.position = gameObject.transform.position;
+    }
 }
