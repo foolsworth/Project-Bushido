@@ -30,6 +30,6 @@ Material:
     - _Distance: 1
     - _ScrollDirX: 1
     - _ScrollDirY: 1
-    - _Speed: 0.32
+    - _Speed: 0.01
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}

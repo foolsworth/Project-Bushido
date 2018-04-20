@@ -72,7 +72,7 @@ public class HeadShot : MonoBehaviour {
         {
 
 
-            GameObject.Find("Blur").GetComponent<Material>().SetFloat("Factor", 3*(manager.health/100));
+            GameObject.Find("Blur").GetComponent<Renderer>().material.SetFloat("Factor", 3- (3(manager.health/100)));
         }
     }
 
