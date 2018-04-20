@@ -68,6 +68,12 @@ public class HeadShot : MonoBehaviour {
             
         }
 
+        if (manager.health <= 100)
+        {
+
+
+            GameObject.Find("Blur").GetComponent<Material>().SetFloat("Factor", 3*(manager.health/100));
+        }
     }
 
     IEnumerator reset()
